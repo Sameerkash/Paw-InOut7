@@ -8,7 +8,7 @@ A flutter app for managing pet essentails for owners.
 sl no. | Task | Assignee | Progress
 -------|------|----------|---------
 1      |Set up firebase |  | No
-2      |Database Design |  | No
+2      |Database Design |Sameer | In-Progress
 3      |UI Design  |  | No
 4      | DashBoard  |  | No
 5      |fing a Mate |  | No
@@ -20,6 +20,12 @@ sl no. | Task | Assignee | Progress
 11     |Vet and Consultation |  | No
 12     | For Hire |  | No
 13     | Train your pets, Health tips and tricks|  | No
+
+**Database Schema**
+
+
+
+
 
 **Resources**
 
