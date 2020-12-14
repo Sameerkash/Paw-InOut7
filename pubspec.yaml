@@ -23,8 +23,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cloud_firestore: ^0.14.4
   cupertino_icons: ^1.0.0
+  dartz: ^0.9.2
+  firebase_core: ^0.5.3
   flutter_hooks: ^0.15.0
+  flutter_screenutil: ^3.2.0
   freezed_annotation: ^0.12.0
   hooks_riverpod: ^0.12.1
   json_annotation: ^3.1.1
@@ -37,6 +41,11 @@ dev_dependencies:
   freezed: ^0.12.3
   json_serializable: ^3.5.1
 
+# `flutter pub global activate derry` to use the below scritps
+scripts:
+  build: flutter pub run build_runner build --delete-conflicting-outputs
+  watch: flutter pub run build_runner watch --delete-conflicting-outputs
+  debug-apk: flutter build apk --debug
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
