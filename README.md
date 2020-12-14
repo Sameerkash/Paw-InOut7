@@ -7,7 +7,7 @@ A flutter app for managing pet essentails for owners.
 | sl no. | Task                                    | Assignee | Progress    |
 | ------ | --------------------------------------- | -------- | ----------- |
 | 1      | Set up firebase                         |          | No          |
-| 2      | Database Design                         | Sameer   | In-Progress |
+| 2      | Database Design                         | Sameer   | Yes |
 | 3      | UI Design                               | Vanshika | In-Progress |
 | 4      | DashBoard                               | Akanksha | In-Progress |
 | 5      | find a Mate                             |          | No          |
