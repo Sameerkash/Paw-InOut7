@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:petme/models/pet/pet.dart';
+import '../pet/pet.dart';
 part 'forum.freezed.dart';
 part 'forum.g.dart';
 
