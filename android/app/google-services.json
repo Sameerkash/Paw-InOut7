@@ -14,11 +14,27 @@
       },
       "oauth_client": [
         {
+          "client_id": "41206337522-314a99ms8b41biaq2458dk8v8kga3sbe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inout.paw",
+            "certificate_hash": "4f15c6d1eeaffc3a00837c21f5de4817d4b528e0"
+          }
+        },
+        {
           "client_id": "41206337522-60lid1s317a7jabli3524jgc0rv52n0o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.inout.paw",
             "certificate_hash": "72ae4aac164371f87f20ca70afce58af6fd312fa"
+          }
+        },
+        {
+          "client_id": "41206337522-sbhfip0o0j7dglsesndbdurrq1mq73nq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inout.paw",
+            "certificate_hash": "6ca00d5cbbeb2951ea1c5577ce62a575a58d133f"
           }
         },
         {

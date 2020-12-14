@@ -12,6 +12,7 @@ abstract class Pet with _$Pet {
     String imageUrl,
     String age,
     String weight,
+    String gender,
     PetCategory petType,
     PetBreed breed,
   }) = _Pet;
