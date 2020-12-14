@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:petme/ui/adoptionItem.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:petme/ui/adoption/adoption.item.dart';
 
 class AdoptionList extends StatefulWidget {
   @override
@@ -10,13 +11,12 @@ class AdoptionList extends StatefulWidget {
 }
 
 class _AdoptionListState extends State<AdoptionList> {
-  _card() {
+  _card(String image) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: GestureDetector(
         onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => AdoptionItem()));
+          context.rootNavigator.push('/adoption-item');
         },
         child: Stack(
 //        alignment: AlignmentDirectional.center,
@@ -60,11 +60,11 @@ class _AdoptionListState extends State<AdoptionList> {
                                         fontSize: 25,
                                         color: Colors.grey.shade700),
                                   ),
-                                  Icon(FontAwesomeIcons.venus)
+                                  Icon(FontAwesome.venus)
                                 ],
                               ),
                               Text(
-                                'Abissynian cat',
+                                'Golden Retriver',
 //                              textDirection: TextDirection.ltr,
                                 style: TextStyle(
                                     fontSize: 15, color: Colors.grey.shade700),
@@ -102,13 +102,13 @@ class _AdoptionListState extends State<AdoptionList> {
                 width: 150,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Colors.purple.shade100,
+                  color: Colors.amber.shade100,
                 ),
               ),
               Image(
                   height: 200,
                   width: MediaQuery.of(context).size.width / 2,
-                  image: AssetImage("assets/images/dog_2.png"))
+                  image: AssetImage(image))
             ])
           ],
         ),
@@ -120,8 +120,25 @@ class _AdoptionListState extends State<AdoptionList> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
+          title: Text(
+            "Adopt",
+            style: GoogleFonts.openSans(
+                fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Colors.amber[300],
+          // automaticallyImplyLeading: false,
         ),
-        body: _card());
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                _card("assets/images/dog_2.png"),
+                _card("assets/images/dog_1.png"),
+                _card("assets/images/dog_1.png"),
+                _card("assets/images/dog_2.png"),
+              ],
+            ),
+          ),
+        ));
   }
 }
