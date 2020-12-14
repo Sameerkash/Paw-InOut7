@@ -27,7 +27,7 @@ A flutter app for managing pet essentails for owners.
 | ---------------------- | ---------- | -------------------- | --------- | ---------- | --------- |
 | users                  | userId     | pets                 | petId     |
 | users                  | userId     | dashBoard            |
-| mates                  | petId      | macthes/chats chatId |
+| mates                  | petId      | matches/chats chatId |
 | adoption               | petId      |
 | Store/products         | productId  |
 | Store/categories       | categoryId |
