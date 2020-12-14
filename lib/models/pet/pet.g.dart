@@ -14,6 +14,7 @@ _$_Pet _$_$_PetFromJson(Map<String, dynamic> json) {
     imageUrl: json['imageUrl'] as String,
     age: json['age'] as String,
     weight: json['weight'] as String,
+    gender: json['gender'] as String,
     petType: json['petType'] == null
         ? null
         : PetCategory.fromJson(json['petType'] as Map<String, dynamic>),
@@ -30,6 +31,7 @@ Map<String, dynamic> _$_$_PetToJson(_$_Pet instance) => <String, dynamic>{
       'imageUrl': instance.imageUrl,
       'age': instance.age,
       'weight': instance.weight,
+      'gender': instance.gender,
       'petType': instance.petType?.toJson(),
       'breed': instance.breed?.toJson(),
     };
