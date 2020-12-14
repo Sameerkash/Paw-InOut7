@@ -39,6 +39,7 @@ dependencies:
   json_annotation: ^3.1.1
   path_provider: ^1.6.24
   sembast: ^2.4.8
+  drawerbehavior: ^1.1.4
 
 dev_dependencies:
   flutter_test:
