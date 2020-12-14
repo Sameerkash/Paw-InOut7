@@ -9,7 +9,7 @@ A flutter app for managing pet essentails for owners.
 | 1      | Set up firebase                         |          | No          |
 | 2      | Database Design                         | Sameer   | In-Progress |
 | 3      | UI Design                               | Vanshika | In-Progress |
-| 4      | DashBoard                               |          | No          |
+| 4      | DashBoard                               | Akanksha | In-Progress |
 | 5      | find a Mate                             |          | No          |
 | 6      | Adopt don't shop                        |          | No          |
 | 7      | Discussions                             |          | No          |
