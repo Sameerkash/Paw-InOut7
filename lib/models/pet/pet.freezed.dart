@@ -21,6 +21,7 @@ class _$PetTearOff {
       {String petId,
       String petName,
       String userId,
+      String imageUrl,
       String age,
       String weight,
       PetCategory petType,
@@ -29,6 +30,7 @@ class _$PetTearOff {
       petId: petId,
       petName: petName,
       userId: userId,
+      imageUrl: imageUrl,
       age: age,
       weight: weight,
       petType: petType,
@@ -51,6 +53,7 @@ mixin _$Pet {
   String get petId;
   String get petName;
   String get userId;
+  String get imageUrl;
   String get age;
   String get weight;
   PetCategory get petType;
@@ -68,6 +71,7 @@ abstract class $PetCopyWith<$Res> {
       {String petId,
       String petName,
       String userId,
+      String imageUrl,
       String age,
       String weight,
       PetCategory petType,
@@ -90,6 +94,7 @@ class _$PetCopyWithImpl<$Res> implements $PetCopyWith<$Res> {
     Object petId = freezed,
     Object petName = freezed,
     Object userId = freezed,
+    Object imageUrl = freezed,
     Object age = freezed,
     Object weight = freezed,
     Object petType = freezed,
@@ -99,6 +104,7 @@ class _$PetCopyWithImpl<$Res> implements $PetCopyWith<$Res> {
       petId: petId == freezed ? _value.petId : petId as String,
       petName: petName == freezed ? _value.petName : petName as String,
       userId: userId == freezed ? _value.userId : userId as String,
+      imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
       age: age == freezed ? _value.age : age as String,
       weight: weight == freezed ? _value.weight : weight as String,
       petType: petType == freezed ? _value.petType : petType as PetCategory,
@@ -136,6 +142,7 @@ abstract class _$PetCopyWith<$Res> implements $PetCopyWith<$Res> {
       {String petId,
       String petName,
       String userId,
+      String imageUrl,
       String age,
       String weight,
       PetCategory petType,
@@ -161,6 +168,7 @@ class __$PetCopyWithImpl<$Res> extends _$PetCopyWithImpl<$Res>
     Object petId = freezed,
     Object petName = freezed,
     Object userId = freezed,
+    Object imageUrl = freezed,
     Object age = freezed,
     Object weight = freezed,
     Object petType = freezed,
@@ -170,6 +178,7 @@ class __$PetCopyWithImpl<$Res> extends _$PetCopyWithImpl<$Res>
       petId: petId == freezed ? _value.petId : petId as String,
       petName: petName == freezed ? _value.petName : petName as String,
       userId: userId == freezed ? _value.userId : userId as String,
+      imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
       age: age == freezed ? _value.age : age as String,
       weight: weight == freezed ? _value.weight : weight as String,
       petType: petType == freezed ? _value.petType : petType as PetCategory,
@@ -186,6 +195,7 @@ class _$_Pet implements _Pet {
       {this.petId,
       this.petName,
       this.userId,
+      this.imageUrl,
       this.age,
       this.weight,
       this.petType,
@@ -200,6 +210,8 @@ class _$_Pet implements _Pet {
   @override
   final String userId;
   @override
+  final String imageUrl;
+  @override
   final String age;
   @override
   final String weight;
@@ -210,7 +222,7 @@ class _$_Pet implements _Pet {
 
   @override
   String toString() {
-    return 'Pet(petId: $petId, petName: $petName, userId: $userId, age: $age, weight: $weight, petType: $petType, breed: $breed)';
+    return 'Pet(petId: $petId, petName: $petName, userId: $userId, imageUrl: $imageUrl, age: $age, weight: $weight, petType: $petType, breed: $breed)';
   }
 
   @override
@@ -224,6 +236,9 @@ class _$_Pet implements _Pet {
                     .equals(other.petName, petName)) &&
             (identical(other.userId, userId) ||
                 const DeepCollectionEquality().equals(other.userId, userId)) &&
+            (identical(other.imageUrl, imageUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageUrl, imageUrl)) &&
             (identical(other.age, age) ||
                 const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.weight, weight) ||
@@ -241,6 +256,7 @@ class _$_Pet implements _Pet {
       const DeepCollectionEquality().hash(petId) ^
       const DeepCollectionEquality().hash(petName) ^
       const DeepCollectionEquality().hash(userId) ^
+      const DeepCollectionEquality().hash(imageUrl) ^
       const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(weight) ^
       const DeepCollectionEquality().hash(petType) ^
@@ -261,6 +277,7 @@ abstract class _Pet implements Pet {
       {String petId,
       String petName,
       String userId,
+      String imageUrl,
       String age,
       String weight,
       PetCategory petType,
@@ -274,6 +291,8 @@ abstract class _Pet implements Pet {
   String get petName;
   @override
   String get userId;
+  @override
+  String get imageUrl;
   @override
   String get age;
   @override

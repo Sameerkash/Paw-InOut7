@@ -9,6 +9,7 @@ abstract class Pet with _$Pet {
     String petId,
     String petName,
     String userId,
+    String imageUrl,
     String age,
     String weight,
     PetCategory petType,
