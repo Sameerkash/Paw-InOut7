@@ -19,7 +19,8 @@ A flutter app for managing pet essentails for owners.
 | 11     | Vet and Consultation                    |          | No          |
 | 12     | For Hire                                |          | No          |
 | 13     | Train your pets, Health tips and tricks |          | No          |
-| 14     | Auth View                               | Sameer   | In-Progress |
+| 14     | Auth View                               | Sameer   | Yes         |
+| 15     | Drawer Profile                          | Sameer   | In-Progress |
 
 **Database Schema**
 
