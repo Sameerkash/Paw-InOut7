@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:petme/models/user/user.dart';
 import 'package:sembast/sembast.dart';
 
+import '../models/user/user.dart';
 import 'database.dart';
 
 class AppRepository {
