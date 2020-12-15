@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:petme/widgets/image.dart';
 
 class ProfileView extends StatelessWidget {
@@ -35,9 +36,9 @@ class ProfileView extends StatelessWidget {
                 child: AutoSizeText(
                   "Activity",
                   style: GoogleFonts.openSans(
-                      fontSize: 23,
+                      fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey[600]),
+                      color: Colors.amber[400]),
                 ),
               ),
               ProfileImageCard(),
@@ -124,8 +125,14 @@ class ProfileImageCard extends StatelessWidget {
 }
 
 class MyProfileCard extends StatelessWidget {
+  final String name;
+  final String bio;
+  final String imageURL;
   const MyProfileCard({
     Key key,
+    this.name,
+    this.bio,
+    this.imageURL,
   }) : super(key: key);
 
   @override
@@ -144,9 +151,9 @@ class MyProfileCard extends StatelessWidget {
             Text(
               "My Profile",
               style: GoogleFonts.openSans(
-                  fontSize: 28,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey[600]),
+                  color: Colors.amber[400]),
             ),
             SizedBox(
               height: .03.sh,

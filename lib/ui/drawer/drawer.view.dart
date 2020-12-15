@@ -4,6 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MenuItem {
   final String title;
@@ -141,7 +143,7 @@ class _MenuScreenState extends State<MenuScreen> {
         child: SafeArea(
           child: Column(
             // mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               // Spacer(),
@@ -157,18 +159,17 @@ class _MenuScreenState extends State<MenuScreen> {
               //     ),
               //   ),
               // ),
-              // Padding(
-              //   padding: const EdgeInsets.only(
-              //       bottom: 36.0, left: 24.0, right: 24.0),
-              //   child: Text(
-              //     ("name"),
-              //     style: TextStyle(
-              //       fontSize: 22,
-              //       color: Colors.white,
-              //       fontWeight: FontWeight.w900,
-              //     ),
-              //   ),
-              // ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 0.08.sh, left: 24, right: 24.0),
+                child: Text(
+                  ("Paw"),
+                  style: GoogleFonts.openSans(
+                    fontSize: 25,
+                    color: Colors.grey[200],
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
               Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
