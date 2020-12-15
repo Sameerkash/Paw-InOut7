@@ -1,9 +1,9 @@
 import 'package:drawerbehavior/drawerbehavior.dart';
 import 'package:flutter/material.dart';
-import 'package:petme/providers/app.provider.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:petme/ui/adoption/adoptionlist.view.dart';
-import 'package:petme/widgets/drawer.dart';
+
+import '../widgets/drawer.dart';
+import 'adoption/adoptionlist.view.dart';
+import 'profile/profile.view.dart';
 
 class NavBarView extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _NavBarViewState extends State<NavBarView> {
   int selectedMenuItemId;
 
   List<Widget> views = [
-    Container(),
+    ProfileView(),
     Container(),
     AdoptionList(),
     Container(),

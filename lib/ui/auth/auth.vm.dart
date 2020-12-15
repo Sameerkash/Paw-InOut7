@@ -16,7 +16,7 @@ abstract class AuthState with _$AuthState {
   const factory AuthState.unAuthenticated() = _UnAuthenticated;
 }
 
-class AuthVM extends StateNotifier {
+class AuthVM extends StateNotifier<AuthState> {
   AppRepository repo;
 
   AuthVM(ProviderReference ref)
