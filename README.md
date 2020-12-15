@@ -15,12 +15,12 @@ A flutter app for managing pet essentails for owners.
 | 7      | Discussions                             |          | No          |
 | 8      | Store                                   |          | No          |
 | 9      | Lost and found                          |          | No          |
-| 10     | Authentication with firebase            |          | No          |
+| 10     | Authentication with firebase            | Sameer   | Yes         |
 | 11     | Vet and Consultation                    |          | No          |
 | 12     | For Hire                                |          | No          |
 | 13     | Train your pets, Health tips and tricks |          | No          |
 | 14     | Auth View                               | Sameer   | Yes         |
-| 15     | Drawer Profile                          | Sameer   | In-Progress |
+| 15     | Drawer, Profile View                    | Sameer   | In-Progress |
 
 **Database Schema**
 
