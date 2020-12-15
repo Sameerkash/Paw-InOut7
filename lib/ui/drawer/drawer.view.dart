@@ -2,54 +2,72 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class HomeScreen extends StatefulWidget {
-  static List<MenuItem> mainMenu = [
-    MenuItem(("payment"), Icons.payment, 0),
-    MenuItem(("promos"), Icons.card_giftcard, 1),
-    MenuItem(("notifications"), Icons.notifications, 2),
-    MenuItem(("help"), Icons.help, 3),
-    MenuItem(("about_us"), Icons.info_outline, 4),
-  ];
+class MenuItem {
+  final String title;
+  final IconData icon;
+  final int index;
 
-  @override
-  _HomeScreenState createState() => new _HomeScreenState();
+  const MenuItem(this.title, this.icon, this.index);
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class DrawerView extends StatefulWidget {
+  final List<Widget> views;
+  const DrawerView({
+    Key key,
+    this.views,
+  }) : super(key: key);
+  @override
+  _DrawerViewState createState() => _DrawerViewState();
+}
+
+class _DrawerViewState extends State<DrawerView> {
+  static List<MenuItem> mainMenu = [
+    MenuItem(("Profile"), MaterialCommunityIcons.face_profile, 0),
+    MenuItem(("Dashboard"), MaterialCommunityIcons.view_dashboard, 1),
+    MenuItem(("My Pets"), FontAwesome.paw, 2),
+    MenuItem(("Messages"), MaterialCommunityIcons.message, 3),
+    MenuItem(("Settings"), Ionicons.ios_settings, 4),
+  ];
+
+  int currentIndex = 0;
   final _drawerController = ZoomDrawerController();
-
-  int _currentPage = 0;
-
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
       controller: _drawerController,
       menuScreen: MenuScreen(
-        HomeScreen.mainMenu,
-        callback: _updatePage,
-        current: _currentPage,
+        mainMenu,
+        callback: (int val) {
+          setState(() {
+            currentIndex = val;
+            _drawerController.toggle();
+          });
+        },
+        current: currentIndex,
       ),
-      mainScreen: MainScreen(),
+      mainScreen: MainScreen(views: widget.views, index: currentIndex),
       borderRadius: 24.0,
-//      showShadow: true,
+      showShadow: true,
       angle: 0.0,
-      slideWidth:
-          MediaQuery.of(context).size.width * (ZoomDrawer.isRTL() ? .45 : 0.65),
+      backgroundColor: Colors.grey[300],
+      slideWidth: MediaQuery.of(context).size.width * .65,
       openCurve: Curves.fastOutSlowIn,
-      closeCurve: Curves.bounceIn,
+      closeCurve: Curves.fastOutSlowIn,
     );
-  }
-
-  void _updatePage(index) {
-    // context.read.updateCurrentPage(index);
-    _drawerController.toggle();
   }
 }
 
 class MainScreen extends StatefulWidget {
+  final List<Widget> views;
+  final int index;
+  const MainScreen({
+    Key key,
+    this.views,
+    this.index,
+  }) : super(key: key);
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -67,7 +85,12 @@ class _MainScreenState extends State<MainScreen> {
         );
       },
       child: GestureDetector(
-        child: Container(),
+        child: Container(
+          child: IndexedStack(
+            index: widget.index,
+            children: widget.views,
+          ),
+        ),
         onPanUpdate: (details) {
           if (details.delta.dx < 6 && !rtl || details.delta.dx < -6 && rtl) {
             ZoomDrawer.of(context).toggle();
@@ -77,20 +100,6 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
-
-class MenuProvider extends StateNotifier<int> {
-  MenuProvider() : super(0);
-
-  void updateCurrentPage(int index) {
-    if (index != state) {
-      state = index;
-    }
-  }
-}
-
-final drawerState = StateNotifierProvider<MenuProvider>((ref) {
-  return MenuProvider();
-});
 
 class MenuScreen extends StatefulWidget {
   final List<MenuItem> mainMenu;
@@ -127,83 +136,74 @@ class _MenuScreenState extends State<MenuScreen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Theme.of(context).primaryColor,
-              Colors.indigo,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+          color: Colors.amber[400],
         ),
         child: SafeArea(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            // mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(
-                    bottom: 24.0, left: 24.0, right: 24.0),
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    shape: BoxShape.circle,
-                  ),
-                ),
+              // Spacer(),
+              // Padding(
+              //   padding: const EdgeInsets.only(
+              //       bottom: 24.0, left: 24.0, right: 24.0),
+              //   child: Container(
+              //     width: 80,
+              //     height: 80,
+              //     decoration: BoxDecoration(
+              //       color: Colors.grey[300],
+              //       shape: BoxShape.circle,
+              //     ),
+              //   ),
+              // ),
+              // Padding(
+              //   padding: const EdgeInsets.only(
+              //       bottom: 36.0, left: 24.0, right: 24.0),
+              //   child: Text(
+              //     ("name"),
+              //     style: TextStyle(
+              //       fontSize: 22,
+              //       color: Colors.white,
+              //       fontWeight: FontWeight.w900,
+              //     ),
+              //   ),
+              // ),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  ...widget.mainMenu
+                      .map((item) => MenuItemWidget(
+                            key: Key(item.index.toString()),
+                            item: item,
+                            callback: widget.callback,
+                            widthBox: widthBox,
+                            style: style,
+                            selected: widget.current == item.index,
+                          ))
+                      .toList()
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    bottom: 36.0, left: 24.0, right: 24.0),
-                child: Text(
-                  ("name"),
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ),
-              Consumer(builder: (context, watch, chil) {
-                int index = watch(drawerState.state);
-                return Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    ...widget.mainMenu
-                        .map((item) => MenuItemWidget(
-                              key: Key(item.index.toString()),
-                              item: item,
-                              callback: widget.callback,
-                              widthBox: widthBox,
-                              style: style,
-                              selected: index == item.index,
-                            ))
-                        .toList()
-                  ],
-                );
-              }),
-              Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(left: 24.0, right: 24.0),
-                child: OutlineButton(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      ("logout"),
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  borderSide: BorderSide(color: Colors.white, width: 2.0),
-                  onPressed: () => print("Pressed !"),
-                  textColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.0)),
-                ),
-              ),
-              Spacer(),
+              // Spacer(),
+              // // Padding(
+              // //   padding: const EdgeInsets.only(left: 24.0, right: 24.0),
+              // //   child: OutlineButton(
+              // //     child: Padding(
+              // //       padding: const EdgeInsets.all(8.0),
+              // //       child: Text(
+              // //         ("logout"),
+              // //         style: TextStyle(fontSize: 18),
+              // //       ),
+              // //     ),
+              //     borderSide: BorderSide(color: Colors.white, width: 2.0),
+              //     onPressed: () => print("Pressed !"),
+              //     textColor: Colors.white,
+              //     shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(16.0)),
+              //   ),
+              // ),
+              // Spacer(),
             ],
           ),
         ),
@@ -234,7 +234,7 @@ class MenuItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
       onPressed: () => callback(item.index),
-      color: selected ? Color(0x44000000) : null,
+      color: selected ? Colors.amber[200] : null,
       child: Row(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -256,12 +256,4 @@ class MenuItemWidget extends StatelessWidget {
       ),
     );
   }
-}
-
-class MenuItem {
-  final String title;
-  final IconData icon;
-  final int index;
-
-  const MenuItem(this.title, this.icon, this.index);
 }

@@ -1,9 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:petme/ui/adoption/adoption.item.dart';
 
 class AdoptionList extends StatefulWidget {
   @override

@@ -6,8 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:petme/providers/app.provider.dart';
-import 'package:petme/widgets/textField.dart';
+import '../../providers/app.provider.dart';
+import '../../widgets/textField.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class AuthView extends HookWidget {
