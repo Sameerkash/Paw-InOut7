@@ -429,7 +429,7 @@ class _AdoptionListState extends State<AdoptionList> {
                                                           width: 6.0,
                                                         ),
                                                         Text(
-                                                          '${animal.distanceToUser}',
+                                                          'Distance: ${animal.distanceToUser}',
                                                           style: TextStyle(
                                                             fontSize: 16.0,
                                                             color: Theme.of(
