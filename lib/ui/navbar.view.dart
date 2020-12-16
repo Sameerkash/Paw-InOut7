@@ -1,79 +1,23 @@
-import 'package:drawerbehavior/drawerbehavior.dart';
 import 'package:flutter/material.dart';
-import 'package:petme/providers/app.provider.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:petme/ui/adoptionList.dart';
-import 'package:petme/widgets/drawer.dart';
+import 'package:petme/ui/pets/pets.view.dart';
 
-class NavBarView extends StatefulWidget {
-  @override
-  _NavBarViewState createState() => _NavBarViewState();
-}
+import 'adoption/adoptionlist.view.dart';
+import 'drawer/drawer.view.dart';
+import 'profile/profile.view.dart';
 
-class _NavBarViewState extends State<NavBarView> {
-  int selectedMenuItemId;
-
-  @override
-  void initState() {
-    selectedMenuItemId = menu.items[0].id;
-    super.initState();
-  }
+class NavBarView extends StatelessWidget {
+  final List<Widget> views = [
+    ProfileView(),
+    Container(),
+    PetsView(),
+    AdoptionList(),
+    Container(),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return DrawerScaffold(
-      appBar: AppBar(
-        title: Text("Paw"),
-        backgroundColor: Colors.amber[300],
-      ),
-      drawers: [
-        SideDrawer(
-          percentage: 0.7,
-          menu: menuWithIcon,
-          direction: Direction.left,
-          animation: true,
-          color: Colors.amber[400],
-          selectorColor: Colors.white,
-          selectedItemId: selectedMenuItemId,
-          onMenuItemSelected: (itemId) {
-            setState(() {
-              selectedMenuItemId = itemId;
-            });
-          },
-        ),
-      ],
-      builder: (context, id) => IndexedStack(
-        index: id,
-        children: menu.items
-            .map((e) => Center(
-                  child: Column(
-                    children: [
-                      FlatButton(
-                        child: Text('Adoption'),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => AdoptionList()));
-                        },
-                      ),
-                      Text("Page~${e.title}"),
-                    ],
-                  ),
-                ))
-            .toList(),
-      ),
+    return DrawerView(
+      views: views,
     );
-
-    // Scaffold(
-    //   body: Center(
-    //     child: FlatButton(
-    //       child: Text("LogOut"),
-    //       onPressed: () {
-    //         context.read(authProvider).signOut();
-    //       },
-    //     ),
-    //   ),
-    // );
   }
 }
