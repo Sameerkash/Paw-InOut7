@@ -11,7 +11,8 @@ abstract class AppUser with _$AppUser {
     String email,
     String phone,
     String adress,
-String imageUrl,
+    String imageUrl,
+    String bio,
   }) = _AppUser;
 
   factory AppUser.fromJson(Map<String, dynamic> json) =>

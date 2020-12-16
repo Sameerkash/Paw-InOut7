@@ -22,14 +22,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  animations: ^1.1.2
   auto_route: ^0.6.9
   auto_size_text: ^2.1.0
+  cached_network_image: ^2.4.1
   cloud_firestore: ^0.14.4
   cupertino_icons: ^1.0.0
   dartz: ^0.9.2
   drawerbehavior: ^1.1.4
   firebase_auth: ^0.18.4+1
   firebase_core: ^0.5.3
+  firebase_storage: ^5.2.0
   flutter_hooks: ^0.15.0
   flutter_screenutil: ^3.2.0
   flutter_vector_icons: ^0.2.1
@@ -39,6 +42,7 @@ dependencies:
   google_fonts: ^1.1.1
   google_sign_in: ^4.5.6
   hooks_riverpod: ^0.12.1
+  image_picker: ^0.6.7+15
   json_annotation: ^3.1.1
   path_provider: ^1.6.24
   sembast: ^2.4.8
