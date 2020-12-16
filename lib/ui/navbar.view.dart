@@ -2,6 +2,7 @@ import 'package:drawerbehavior/drawerbehavior.dart';
 import 'package:flutter/material.dart';
 import 'package:petme/providers/app.provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:petme/ui/adoptionList.dart';
 import 'package:petme/widgets/drawer.dart';
 
 class NavBarView extends StatefulWidget {
@@ -45,7 +46,20 @@ class _NavBarViewState extends State<NavBarView> {
         index: id,
         children: menu.items
             .map((e) => Center(
-                  child: Text("Page~${e.title}"),
+                  child: Column(
+                    children: [
+                      FlatButton(
+                        child: Text('Adoption'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AdoptionList()));
+                        },
+                      ),
+                      Text("Page~${e.title}"),
+                    ],
+                  ),
                 ))
             .toList(),
       ),
