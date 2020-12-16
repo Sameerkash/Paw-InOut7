@@ -9,7 +9,7 @@ import 'navbar.view.dart';
 
 /// AppView to act as Landing page for  Authentication
 ///
-/// isLoggedIn ? HomeView() : AuthView()
+/// isLoggedIn ? NavBarView() : AuthView()
 class AppView extends HookWidget {
   @override
   Widget build(BuildContext context) {
