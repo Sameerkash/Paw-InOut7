@@ -1,8 +1,6 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AdoptionItem extends StatefulWidget {
   @override
@@ -23,7 +21,7 @@ class _AdoptionItemState extends State<AdoptionItem> {
                 children: <Widget>[
                   Container(
                     height: MediaQuery.of(context).size.height * 0.5,
-                    color: Colors.purple.shade200,
+                    color: Colors.amber.shade200,
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: 20.0, vertical: 60.0),
@@ -38,11 +36,11 @@ class _AdoptionItemState extends State<AdoptionItem> {
                                   Navigator.pop(context);
                                 },
                                 child: Icon(
-                                  FontAwesomeIcons.arrowLeft,
+                                  FontAwesome.arrow_left,
                                   color: Theme.of(context).primaryColor,
                                 ),
                               ),
-                              Icon(FontAwesomeIcons.share,
+                              Icon(FontAwesome.share,
                                   color: Theme.of(context).primaryColor),
                             ],
                           ),
@@ -153,7 +151,7 @@ class _AdoptionItemState extends State<AdoptionItem> {
                         child: Padding(
                           padding: EdgeInsets.all(20.0),
                           child: Icon(
-                            FontAwesomeIcons.heart,
+                            FontAwesome.heart,
                             color: Colors.white,
                           ),
                         ),
@@ -169,7 +167,7 @@ class _AdoptionItemState extends State<AdoptionItem> {
                           child: Padding(
                             padding: EdgeInsets.all(20.0),
                             child: Text(
-                              'Adoption',
+                              'Adopt',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -220,7 +218,7 @@ class _AdoptionItemState extends State<AdoptionItem> {
                           ),
                         ),
                         Icon(
-                          FontAwesomeIcons.venus,
+                          FontAwesome.venus,
                           color: Colors.grey,
                         ),
                       ],
@@ -255,7 +253,7 @@ class _AdoptionItemState extends State<AdoptionItem> {
                     Row(
                       children: <Widget>[
                         Icon(
-                          FontAwesomeIcons.mapMarkerAlt,
+                          FontAwesome.map_marker,
                           color: Theme.of(context).primaryColor,
                           size: 16.0,
                         ),
