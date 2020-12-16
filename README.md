@@ -1,4 +1,4 @@
-# Pet Me - InOut 7.0
+# 🐶 Paw-Pets are awesome! - InOut 7.0
 
 A flutter app for managing pet essentails for owners.
 
