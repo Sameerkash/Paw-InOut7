@@ -106,5 +106,5 @@ PAW aims to solve:
 | 1. | Sameer Kashyap | [@Sameerkash](https://github.com/Sameerkash) |
 | 2. | Akanksha Singh | [@Akanksha1212](https://github.com/Akanksha1212) |
 | 3. | Vanshika Garg | [@Vanshikagarg17](https://github.com/Vanshikagarg17) |
-| 4. | | [@akhilpasumarthi](https://github.com/akhilpasumarthi) |
-| 5. | | [@vamsidhar1999](https://github.com/vamsidhar1999) |
+| 4. | Akhil Pasumarthi | [@akhilpasumarthi](https://github.com/akhilpasumarthi) |
+| 5. | Vamsidhar Reddy | [@vamsidhar1999](https://github.com/vamsidhar1999) |
