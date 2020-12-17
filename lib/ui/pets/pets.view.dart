@@ -1,6 +1,8 @@
+import 'package:animations/animations.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:petme/ui/pets/pets.detail.view.dart';
 
 import '../../widgets/card.dart';
 
@@ -36,15 +38,26 @@ class PetsView extends StatelessWidget {
               icon: Icons.add,
               onPressed: () {},
             ),
-            PetCard(
-              onTap: () {},
-              name: "Maxiee",
-              caption: "Fun little pup always filled with energy",
-              age: '9 months',
-              imageURL: 'assets/images/i1.jpg',
+            OpenContainer(
+              closedShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              transitionDuration: const Duration(milliseconds: 400),
+              closedBuilder: (context, action) {
+                return PetCard(
+                  // onTap: ,
+                  name: "Maxiee",
+                  caption: "Fun little pup always filled with energy",
+                  age: '9 months',
+                  imageURL: 'assets/images/i1.jpg',
+                );
+              },
+              openBuilder: (context, action) {
+                return PetsDetailView();
+              },
             ),
             PetCard(
-              onTap: () {},
+              // onTap: () {},
               name: "Benji",
               caption: "Playful and Joyful",
               age: '2 years',

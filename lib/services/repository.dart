@@ -17,7 +17,7 @@ class AppRepository {
   /// Firebase Auth instance
   final auth = FirebaseAuth.instance;
 
-  ///
+  ///Firebase storage instance.
   final firebaseStorage = FirebaseStorage.instance.ref();
 
   /// Local Sembast instance
@@ -153,6 +153,7 @@ class AppRepository {
     return user;
   }
 
+  /// update proileImage of a user
   Future<AppUser> updateImage(File image, String uid) async {
     try {
       var fileExtension = path.extension(image.path);
@@ -178,6 +179,7 @@ class AppRepository {
     }
   }
 
+  /// update Profile details of user
   Future<AppUser> updateUserProfile(AppUser user, String uid) async {
     try {
       await firestore.collection('users').doc(uid).update(user.toJson());
