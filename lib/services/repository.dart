@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sembast/sembast.dart';
-
+import 'package:path/path.dart' as path;
 import '../models/user/user.dart';
 import 'database.dart';
 
@@ -13,6 +16,9 @@ class AppRepository {
 
   /// Firebase Auth instance
   final auth = FirebaseAuth.instance;
+
+  ///
+  final firebaseStorage = FirebaseStorage.instance.ref();
 
   /// Local Sembast instance
   final Future<Database> _db = AppDatabase.instance.database;
@@ -38,7 +44,7 @@ class AppRepository {
     return await auth.signInWithCredential(credential);
   }
 
- /// Create user with Email and Password
+  /// Create user with Email and Password
   Future<Either<String, bool>> createUserwithEmail(
       {String email, String password, String name}) async {
     try {
@@ -140,5 +146,51 @@ class AppRepository {
     print(res);
     await GoogleSignIn().signOut();
     await auth.signOut();
+  }
+
+  Future<AppUser> getUserProfile() async {
+    final user = getLoggedInUser();
+    return user;
+  }
+
+  Future<AppUser> updateImage(File image, String uid) async {
+    try {
+      var fileExtension = path.extension(image.path);
+      final storageRefrence = firebaseStorage.child('users/$uid$fileExtension');
+
+      await storageRefrence.putFile(image).catchError((err) {
+        print(err);
+        return;
+      });
+      String url = await storageRefrence.getDownloadURL();
+
+      await firestore.collection('users').doc(uid).update({'imageUrl': url});
+
+      final user = await firestore.collection('users').doc(uid).get();
+
+      final u =
+          await _store.record(USERKEY).put(await _db, user.data(), merge: true);
+
+      return AppUser.fromJson(u);
+    } catch (e) {
+      print(e);
+      return null;
+    }
+  }
+
+  Future<AppUser> updateUserProfile(AppUser user, String uid) async {
+    try {
+      await firestore.collection('users').doc(uid).update(user.toJson());
+
+      final us = await firestore.collection('users').doc(uid).get();
+
+      final u =
+          await _store.record(USERKEY).put(await _db, us.data(), merge: true);
+
+      return AppUser.fromJson(u);
+    } catch (e) {
+      print(e);
+      return null;
+    }
   }
 }

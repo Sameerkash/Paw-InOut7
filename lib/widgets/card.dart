@@ -56,7 +56,7 @@ class PetCard extends StatelessWidget {
                       style: GoogleFonts.openSans(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                          color: Colors.black87),
                     ),
                     Text(
                       caption,
@@ -64,7 +64,7 @@ class PetCard extends StatelessWidget {
                       style: GoogleFonts.openSans(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                          color: Colors.black54),
                     ),
                     SizedBox(
                       height: 0.012.sh,
@@ -74,7 +74,7 @@ class PetCard extends StatelessWidget {
                       style: GoogleFonts.openSans(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                          color: Colors.black45),
                     ),
                   ],
                 ),

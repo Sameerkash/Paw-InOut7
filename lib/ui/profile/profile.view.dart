@@ -1,13 +1,33 @@
+import 'package:animations/animations.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:petme/models/user/user.dart';
+import 'package:petme/ui/profile/edit.profile.view.dart';
+import 'package:petme/ui/profile/profile.vm.dart';
 import 'package:petme/widgets/image.dart';
 
-class ProfileView extends StatelessWidget {
+final profileProvider = StateNotifierProvider<ProfileVM>((ref) {
+  return ProfileVM(ref);
+});
+
+class ProfileView extends HookWidget {
+  final List<Widget> pageList = <Widget>[
+    ProfileScrollView(),
+    EditProfileView(),
+  ];
   @override
   Widget build(BuildContext context) {
+    var index = useState(0);
+
+    final profile = useProvider(profileProvider.state);
+
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.arrow_back_ios, color: Colors.grey),
@@ -15,38 +35,85 @@ class ProfileView extends StatelessWidget {
         backgroundColor: Colors.white,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              index.value == 0 ? index.value = 1 : index.value = 0;
+            },
             icon: Icon(
-              Icons.edit,
+              index.value == 0
+                  ? Icons.edit
+                  : MaterialCommunityIcons.face_profile,
               color: Colors.grey,
             ),
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              MyProfileCard(),
-              Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 0.05.sw, vertical: 0.015.sh),
-                child: AutoSizeText(
-                  "Activity",
-                  style: GoogleFonts.openSans(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.amber[400]),
-                ),
+      body: profile.when(
+        loading: () => Center(
+          child: CircularProgressIndicator(),
+        ),
+        loaded: (profile) => PageTransitionSwitcher(
+            transitionBuilder: (
+              Widget child,
+              Animation<double> animation,
+              Animation<double> secondaryAnimation,
+            ) {
+              return FadeThroughTransition(
+                animation: animation,
+                secondaryAnimation: secondaryAnimation,
+                child: child,
+              );
+            },
+            child: index.value == 0
+                ? ProfileScrollView(
+                    profile: profile,
+                  )
+                : EditProfileView(
+                    profile: profile,
+                  )),
+        error: (_) => Center(
+          child: Text(""),
+        ),
+      ),
+    );
+  }
+}
+
+class ProfileScrollView extends StatelessWidget {
+  final AppUser profile;
+  const ProfileScrollView({
+    Key key,
+    this.profile,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            MyProfileCard(
+              name: profile.userName,
+              bio: profile.bio,
+              imageURL: profile.imageUrl,
+            ),
+            Container(
+              padding:
+                  EdgeInsets.symmetric(horizontal: 0.05.sw, vertical: 0.015.sh),
+              child: AutoSizeText(
+                "Activity",
+                style: GoogleFonts.openSans(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.amber[400]),
               ),
-              ProfileImageCard(),
-              SizedBox(
-                height: 0.01.sh,
-              ),
-            ],
-          ),
+            ),
+            ProfileImageCard(),
+            SizedBox(
+              height: 0.01.sh,
+            ),
+          ],
         ),
       ),
     );
@@ -151,7 +218,7 @@ class MyProfileCard extends StatelessWidget {
             Text(
               "My Profile",
               style: GoogleFonts.openSans(
-                  fontSize: 30,
+                  fontSize: 28,
                   fontWeight: FontWeight.bold,
                   color: Colors.amber[400]),
             ),
@@ -162,19 +229,34 @@ class MyProfileCard extends StatelessWidget {
               alignment: Alignment.center,
               child: Column(
                 children: [
-                  CircleAvatar(
-                    radius: 0.075.sh,
-                    backgroundImage: AssetImage('assets/images/p1.jpg'),
-                  ),
+                  if (imageURL == null)
+                    CircleAvatar(
+                      radius: 0.075.sh,
+                      // backgroundColor: Colors.red,
+                    ),
+                  if (imageURL != null)
+                    CachedNetworkImage(
+                      imageUrl: imageURL,
+                      errorWidget: (err, _, __) => CircleAvatar(
+                        backgroundColor: Colors.red,
+                      ),
+                      imageBuilder: (_, img) {
+                        return CircleAvatar(
+                          radius: 0.075.sh,
+                          backgroundImage: img,
+                        );
+                      },
+                    ),
                   SizedBox(
                     height: .03.sh,
                   ),
-                  Text(
-                    "Anna Alvaardo",
+                  AutoSizeText(
+                    "$name",
                     style: GoogleFonts.openSans(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                         color: Colors.grey[600]),
+                    minFontSize: 18,
                   ),
                   SizedBox(
                     height: .03.sh,
@@ -182,7 +264,7 @@ class MyProfileCard extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 0.015.sw),
                     child: Text(
-                      "Artist in the morning, Dancer by night, proud mom of Cookie 🐶",
+                      bio == null ? "Add a Bio" : "$bio",
                       style: GoogleFonts.openSans(
                           fontSize: 18, color: Colors.grey[500]),
                     ),

@@ -23,7 +23,8 @@ class _$AppUserTearOff {
       String email,
       String phone,
       String adress,
-      String imageUrl}) {
+      String imageUrl,
+      String bio}) {
     return _AppUser(
       userId: userId,
       userName: userName,
@@ -31,6 +32,7 @@ class _$AppUserTearOff {
       phone: phone,
       adress: adress,
       imageUrl: imageUrl,
+      bio: bio,
     );
   }
 
@@ -52,6 +54,7 @@ mixin _$AppUser {
   String get phone;
   String get adress;
   String get imageUrl;
+  String get bio;
 
   Map<String, dynamic> toJson();
   $AppUserCopyWith<AppUser> get copyWith;
@@ -67,7 +70,8 @@ abstract class $AppUserCopyWith<$Res> {
       String email,
       String phone,
       String adress,
-      String imageUrl});
+      String imageUrl,
+      String bio});
 }
 
 /// @nodoc
@@ -86,6 +90,7 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
     Object phone = freezed,
     Object adress = freezed,
     Object imageUrl = freezed,
+    Object bio = freezed,
   }) {
     return _then(_value.copyWith(
       userId: userId == freezed ? _value.userId : userId as String,
@@ -94,6 +99,7 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
       phone: phone == freezed ? _value.phone : phone as String,
       adress: adress == freezed ? _value.adress : adress as String,
       imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
+      bio: bio == freezed ? _value.bio : bio as String,
     ));
   }
 }
@@ -109,7 +115,8 @@ abstract class _$AppUserCopyWith<$Res> implements $AppUserCopyWith<$Res> {
       String email,
       String phone,
       String adress,
-      String imageUrl});
+      String imageUrl,
+      String bio});
 }
 
 /// @nodoc
@@ -129,6 +136,7 @@ class __$AppUserCopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
     Object phone = freezed,
     Object adress = freezed,
     Object imageUrl = freezed,
+    Object bio = freezed,
   }) {
     return _then(_AppUser(
       userId: userId == freezed ? _value.userId : userId as String,
@@ -137,6 +145,7 @@ class __$AppUserCopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
       phone: phone == freezed ? _value.phone : phone as String,
       adress: adress == freezed ? _value.adress : adress as String,
       imageUrl: imageUrl == freezed ? _value.imageUrl : imageUrl as String,
+      bio: bio == freezed ? _value.bio : bio as String,
     ));
   }
 }
@@ -151,7 +160,8 @@ class _$_AppUser implements _AppUser {
       this.email,
       this.phone,
       this.adress,
-      this.imageUrl});
+      this.imageUrl,
+      this.bio});
 
   factory _$_AppUser.fromJson(Map<String, dynamic> json) =>
       _$_$_AppUserFromJson(json);
@@ -168,10 +178,12 @@ class _$_AppUser implements _AppUser {
   final String adress;
   @override
   final String imageUrl;
+  @override
+  final String bio;
 
   @override
   String toString() {
-    return 'AppUser(userId: $userId, userName: $userName, email: $email, phone: $phone, adress: $adress, imageUrl: $imageUrl)';
+    return 'AppUser(userId: $userId, userName: $userName, email: $email, phone: $phone, adress: $adress, imageUrl: $imageUrl, bio: $bio)';
   }
 
   @override
@@ -191,7 +203,9 @@ class _$_AppUser implements _AppUser {
                 const DeepCollectionEquality().equals(other.adress, adress)) &&
             (identical(other.imageUrl, imageUrl) ||
                 const DeepCollectionEquality()
-                    .equals(other.imageUrl, imageUrl)));
+                    .equals(other.imageUrl, imageUrl)) &&
+            (identical(other.bio, bio) ||
+                const DeepCollectionEquality().equals(other.bio, bio)));
   }
 
   @override
@@ -202,7 +216,8 @@ class _$_AppUser implements _AppUser {
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(phone) ^
       const DeepCollectionEquality().hash(adress) ^
-      const DeepCollectionEquality().hash(imageUrl);
+      const DeepCollectionEquality().hash(imageUrl) ^
+      const DeepCollectionEquality().hash(bio);
 
   @override
   _$AppUserCopyWith<_AppUser> get copyWith =>
@@ -221,7 +236,8 @@ abstract class _AppUser implements AppUser {
       String email,
       String phone,
       String adress,
-      String imageUrl}) = _$_AppUser;
+      String imageUrl,
+      String bio}) = _$_AppUser;
 
   factory _AppUser.fromJson(Map<String, dynamic> json) = _$_AppUser.fromJson;
 
@@ -237,6 +253,8 @@ abstract class _AppUser implements AppUser {
   String get adress;
   @override
   String get imageUrl;
+  @override
+  String get bio;
   @override
   _$AppUserCopyWith<_AppUser> get copyWith;
 }
