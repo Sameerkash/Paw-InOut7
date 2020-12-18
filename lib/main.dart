@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       //home: Mateview(),
-      //builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
+      builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
     );
   }
 }

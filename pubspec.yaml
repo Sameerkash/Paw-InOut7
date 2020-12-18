@@ -46,12 +46,8 @@ dependencies:
   json_annotation: ^3.1.1
   path_provider: ^1.6.24
   sembast: ^2.4.8
-<<<<<<< HEAD
- 
-=======
   flutter_swipable: ^0.1.1
   flutter_tindercard: ^0.2.0
->>>>>>> fed74877e4a0e04b22b70e1c2b77e8a0ea627b71
 
 dependency_override:
   flutter_svg: ^0.19.2+1
