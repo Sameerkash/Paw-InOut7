@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:petme/ui/mate/matelist.dart';
 
@@ -21,9 +22,18 @@ class MyApp extends StatelessWidget {
       title: 'Paw',
       home: Container(),
       theme: ThemeData(
-        primarySwatch: Colors.amber,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+          primarySwatch: Colors.amber,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          textTheme: TextTheme(
+            headline3: GoogleFonts.openSans(
+                color: Colors.amber[300],
+                fontSize: 25,
+                fontWeight: FontWeight.bold),
+            bodyText1:
+                GoogleFonts.openSans(color: Colors.grey[600], fontSize: 22),
+            bodyText2:
+                GoogleFonts.openSans(color: Colors.grey[600], fontSize: 18),
+          )),
       //home: Mateview(),
       builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
     );
