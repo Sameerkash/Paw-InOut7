@@ -7,17 +7,18 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:petme/models/common/adoption.dart';
 import 'package:sembast/sembast.dart';
 import 'package:path/path.dart' as path;
 import '../models/user/user.dart';
 import 'database.dart';
 
 class AppRepository {
-
+  /// GeoLocator Instance
   final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
-  GeoFirePoint _myLocation;
+
+  /// Geostore instance
   final geo = Geoflutterfire();
-  double latitude, longitude;
 
   /// Cloud Firestore instance
   final firestore = FirebaseFirestore.instance;
@@ -203,44 +204,57 @@ class AppRepository {
       return null;
     }
   }
-  Future<void> adoptionForm(String uid) async{
-         //to get user current location
-        _myLocation=await _getCurrentLocation();
 
-     }
-   Future<void> adoptionList(var radius)async{
-     _myLocation=await _getCurrentLocation();
-     String field = 'location';
-     GeoFirePoint center = geo.point(latitude: latitude, longitude: longitude);
-     var collectionReference = firestore.collection('adoption');
-     await geo
-         .collection(collectionRef: collectionReference)
-         .within(center: center, radius: radius, field: field)
-         .listen((documentList){
-       documentList.forEach((DocumentSnapshot document) {
-         //get details from each document
-       });
-     });
-   }
+  Future<void> adoptionForm(String uid, Adoption adoptionForm) async {
+    //to get user current location
+    // GeoFirePoint _myLocation = await _getCurrentLocation();
+  }
 
+  /// Get adoption list from nearby locations.
+  Stream<List<Adoption>> adoptionList(double radius) async* {
+    try {
+      List<Adoption> availableAdoptions = [];
 
+      final GeoFirePoint _myLocation = await _getCurrentLocation();
+      String field = 'location';
+      GeoFirePoint center = geo.point(
+          latitude: _myLocation.latitude, longitude: _myLocation.longitude);
+      var collectionReference = firestore.collection('adoption');
 
-  Future<GeoFirePoint> _getCurrentLocation() {
+      geo
+          .collection(collectionRef: collectionReference)
+          .within(center: center, radius: radius, field: field)
+          .listen((List<DocumentSnapshot> docs) {
+        docs.forEach((d) {
+          Adoption a = Adoption.fromJson(d.data());
+          a.copyWith(distance: d.data()['distance']);
 
-    geolocator
-        .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
-        .then((Position position) {
+          availableAdoptions.add(a);
+        });
+      });
+
+      yield availableAdoptions;
+    } catch (e) {
+      print(e);
+      yield null; //TODO: Replace with either
+    }
+  }
+
+  Future<GeoFirePoint> _getCurrentLocation() async {
+    try {
+      double latitude, longitude;
+
+      final position = await geolocator.getCurrentPosition(
+          desiredAccuracy: LocationAccuracy.best);
       latitude = position.latitude;
       longitude = position.longitude;
       GeoFirePoint myLocation =
-      geo.point(latitude: latitude, longitude: longitude);
-      this._myLocation = myLocation;
+          geo.point(latitude: latitude, longitude: longitude);
+
       return myLocation;
-
-    }).catchError((e) {
+    } catch (e) {
       print(e);
-      return e;
-    });
+      return null;
+    }
   }
-
 }
