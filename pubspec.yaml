@@ -35,7 +35,7 @@ dependencies:
   firebase_storage: ^5.2.0
   flutter_hooks: ^0.15.0
   flutter_screenutil: ^3.2.0
-  flutter_svg: ^0.17.4
+  #flutter_svg: ^0.17.4
   flutter_swipable: ^0.1.1
   flutter_tindercard: ^0.2.0
   flutter_vector_icons: ^0.2.1
@@ -52,9 +52,11 @@ dependencies:
   sembast: ^2.4.8
   sleek_circular_slider: ^1.2.0+web
   geolocator: ^5.3.1
+  qr_code_scanner: ^0.1.0
+  url_launcher: ^5.7.10
 
-# dependency_overrides:
-#   flutter_svg: ^0.19.2+1
+#dependency_overrides:
+   #flutter_svg: ^0.19.2+1
 dev_dependencies:
   flutter_test:
     sdk: flutter

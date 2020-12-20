@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
@@ -73,7 +73,7 @@ class PetDetailPage extends StatelessWidget {
                   height: 0.2.sh,
                   child: Row(
                     children: [
-                      SvgPicture.asset('svg/018-dog-food.svg'),
+                      //SvgPicture.asset('svg/018-dog-food.svg'),
                     ],
                   ),
                 ),

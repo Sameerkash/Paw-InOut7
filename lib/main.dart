@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:petme/ui/lost/scanner.dart';
 import 'package:petme/ui/mate/matelist.dart';
 
 import 'router/router.gr.dart' as r;
@@ -34,8 +35,8 @@ class MyApp extends StatelessWidget {
             bodyText2:
                 GoogleFonts.openSans(color: Colors.grey[600], fontSize: 18),
           )),
-      //home: Mateview(),
-      builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
+      //home: Lost(),
+     builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
     );
   }
 }

@@ -257,4 +257,12 @@ class AppRepository {
       return null;
     }
   }
+   getuserdetails(var uid ) async {
+     final result = await firestore.collection('users').doc(uid).get();
+     return result;
+  }
+  getpetdetails(var uid ) async {
+    final result = await firestore.collection('petCategory').doc(uid).get();
+    return result;
+  }
 }
