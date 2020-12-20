@@ -75,12 +75,75 @@ class PetDetailPage extends StatelessWidget {
                     children: [
                       //SvgPicture.asset('svg/018-dog-food.svg'),
                     ],
+            FoodCard(),
+            Container()
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class FoodCard extends StatelessWidget {
+  final Function onTap;
+  final String value;
+  final String totalValue;
+  const FoodCard({
+    Key key,
+    this.onTap,
+    this.value,
+    this.totalValue,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Container(
+          height: 0.2.sh,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                height: 0.18.sh,
+                width: 0.3.sw,
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    'assets/images/pedigree.png',
                   ),
                 ),
               ),
-            ),
-            Container()
-          ],
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "300g of 1200g remaining",
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+                  InkWell(
+                    onTap: onTap,
+                    child: Row(
+                      children: [
+                        Icon(
+                          MaterialCommunityIcons.cart,
+                          color: Colors.amber[300],
+                        ),
+                        Text(
+                          "Order Now",
+                          style: Theme.of(context).textTheme.headline3.copyWith(fontSize: 20),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -168,20 +231,50 @@ class HealthCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CirluarData(
-                    icon: MaterialCommunityIcons.water,
-                    value: 50,
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CirluarData(
+                        icon: MaterialCommunityIcons.water,
+                        value: 50,
+                      ),
+                      SizedBox(
+                        height: 0.02.sh,
+                      ),
+                      Text("water",
+                          style: Theme.of(context).textTheme.bodyText2),
+                    ],
                   ),
-                  CirluarData(
-                    icon: MaterialCommunityIcons.heart_pulse,
-                    value: 82,
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CirluarData(
+                        icon: MaterialCommunityIcons.heart_pulse,
+                        value: 82,
+                      ),
+                      SizedBox(
+                        height: 0.02.sh,
+                      ),
+                      Text("pulse",
+                          style: Theme.of(context).textTheme.bodyText2),
+                    ],
                   ),
-                  CirluarData(
-                    icon: MaterialCommunityIcons.food_apple,
-                    value: 30,
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CirluarData(
+                        icon: MaterialCommunityIcons.food_apple,
+                        value: 30,
+                      ),
+                      SizedBox(
+                        height: 0.02.sh,
+                      ),
+                      Text("diet",
+                          style: Theme.of(context).textTheme.bodyText2),
+                    ],
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

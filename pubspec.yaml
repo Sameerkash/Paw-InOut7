@@ -35,7 +35,7 @@ dependencies:
   firebase_storage: ^5.2.0
   flutter_hooks: ^0.15.0
   flutter_screenutil: ^3.2.0
-  #flutter_svg: ^0.17.4
+  # flutter_svg: ^0.17.4
   flutter_swipable: ^0.1.1
   flutter_tindercard: ^0.2.0
   flutter_vector_icons: ^0.2.1
