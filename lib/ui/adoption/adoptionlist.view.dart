@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:petme/ui/adoption/adoption_form.dart';
 
 class AdoptionList extends StatefulWidget {
   @override
@@ -429,7 +430,7 @@ class _AdoptionListState extends State<AdoptionList> {
                                                           width: 6.0,
                                                         ),
                                                         Text(
-                                                          'Distance: ${animal.distanceToUser}',
+                                                          '${animal.distanceToUser}',
                                                           style: TextStyle(
                                                             fontSize: 16.0,
                                                             color: Theme.of(
@@ -491,6 +492,13 @@ class _AdoptionListState extends State<AdoptionList> {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AdoptionForm()));
+        },
       ),
     );
   }
