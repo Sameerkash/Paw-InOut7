@@ -203,14 +203,29 @@ class AppRepository {
       return null;
     }
   }
-  Future<AppUser> adoptionForm(String uid) async{
-        _myLocation=_getCurrentLocation();
+  Future<void> adoptionForm(String uid) async{
+         //to get user current location
+        _myLocation=await _getCurrentLocation();
 
      }
+   Future<void> adoptionList(var radius)async{
+     _myLocation=await _getCurrentLocation();
+     String field = 'location';
+     GeoFirePoint center = geo.point(latitude: latitude, longitude: longitude);
+     var collectionReference = firestore.collection('adoption');
+     await geo
+         .collection(collectionRef: collectionReference)
+         .within(center: center, radius: radius, field: field)
+         .listen((documentList){
+       documentList.forEach((DocumentSnapshot document) {
+         //get details from each document
+       });
+     });
+   }
 
 
 
-  _getCurrentLocation() {
+  Future<GeoFirePoint> _getCurrentLocation() {
 
     geolocator
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
