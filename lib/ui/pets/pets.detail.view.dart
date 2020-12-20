@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
@@ -11,12 +10,12 @@ class PetsDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: PageView(
-      children: [
-        PetDetailPage(),
-        PetDetailPage(),
-        PetDetailPage(),
-      ],
-    ));
+          children: [
+            PetDetailPage(),
+            PetDetailPage(),
+            PetDetailPage(),
+          ],
+        ));
   }
 }
 
@@ -44,8 +43,8 @@ class PetDetailPage extends StatelessWidget {
                 maxLines: 1,
               ),
               background: Image
-                  // CachedNetworkImage
-                  (
+              // CachedNetworkImage
+                (
                 image: AssetImage('assets/images/i1.jpg'),
                 // imageUrl: widget.event.imageUrl,
                 fit: BoxFit.cover,
@@ -63,18 +62,6 @@ class PetDetailPage extends StatelessWidget {
             BirthdayTile(),
             HealthCard(),
             CheckUpCard(),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Container(
-                  height: 0.2.sh,
-                  child: Row(
-                    children: [
-                      //SvgPicture.asset('svg/018-dog-food.svg'),
-                    ],
             FoodCard(),
             Container()
           ],
@@ -305,7 +292,7 @@ class CirluarData extends StatelessWidget {
           startAngle: 0,
           angleRange: 360,
           customWidths: CustomSliderWidths(
-              // handlerSize: 15,
+            // handlerSize: 15,
               progressBarWidth: 8,
               trackWidth: 8),
           customColors: CustomSliderColors(
