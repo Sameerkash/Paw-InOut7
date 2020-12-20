@@ -3,6 +3,7 @@ import 'package:petme/ui/pets/pets.view.dart';
 import 'adoption/adoptionlist.view.dart';
 import 'dashboard/dashboard.view.dart';
 import 'drawer/drawer.view.dart';
+import 'mate/matelist.dart';
 import 'profile/profile.view.dart';
 
 class NavBarView extends StatelessWidget {
@@ -11,7 +12,8 @@ class NavBarView extends StatelessWidget {
     DashBoard(),
     PetsView(),
     AdoptionList(),
-    Container(),
+    Mateview(),
+    // Container(),
   ];
 
   @override

@@ -29,16 +29,20 @@ dependencies:
   cloud_firestore: ^0.14.4
   cupertino_icons: ^1.0.0
   dartz: ^0.9.2
-  drawerbehavior: ^1.1.4
+  # drawerbehavior: ^1.1.4
   firebase_auth: ^0.18.4+1
   firebase_core: ^0.5.3
   firebase_storage: ^5.2.0
   flutter_hooks: ^0.15.0
   flutter_screenutil: ^3.2.0
+  flutter_svg: ^0.17.4
+  flutter_swipable: ^0.1.1
+  flutter_tindercard: ^0.2.0
   flutter_vector_icons: ^0.2.1
   flutter_zoom_drawer: ^1.0.4+1
   font_awesome_flutter: ^8.10.1
   freezed_annotation: ^0.12.0
+  geoflutterfire: ^2.2.1
   google_fonts: ^1.1.1
   google_sign_in: ^4.5.6
   hooks_riverpod: ^0.12.1
@@ -46,15 +50,11 @@ dependencies:
   json_annotation: ^3.1.1
   path_provider: ^1.6.24
   sembast: ^2.4.8
-  flutter_swipable: ^0.1.1
-  flutter_tindercard: ^0.2.0
-  geoflutterfire: ^2.1.0
+  sleek_circular_slider: ^1.2.0+web
   geolocator: ^5.3.1
 
-dependency_override:
-  flutter_svg: ^0.19.2+1
-  
-
+# dependency_overrides:
+#   flutter_svg: ^0.19.2+1
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,13 +1,33 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class PetsDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: NestedScrollView(
+        body: PageView(
+      children: [
+        PetDetailPage(),
+        PetDetailPage(),
+        PetDetailPage(),
+      ],
+    ));
+  }
+}
+
+class PetDetailPage extends StatelessWidget {
+  const PetDetailPage({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return [
           SliverAppBar(
@@ -35,46 +55,244 @@ class PetsDetailView extends StatelessWidget {
           // )
         ];
       },
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Align(
-            alignment: Alignment.topLeft,
-            child: Container(
-              height: 0.12.sh,
-              padding: EdgeInsets.all(5),
-              child: ListView(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                children: [
-                  PetdetailContainer(
-                    label: "Age",
-                    value: "1 Year",
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            DetialsCards(),
+            BirthdayTile(),
+            HealthCard(),
+            CheckUpCard(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Container(
+                  height: 0.2.sh,
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('svg/018-dog-food.svg'),
+                    ],
                   ),
-                  PetdetailContainer(
-                    label: "Sex",
-                    value: "Male",
-                  ),
-                  PetdetailContainer(
-                    label: "Breed",
-                    value: "Golden Retriver",
-                  ),
-                  PetdetailContainer(
-                    label: "Color",
-                    value: "Brunette",
-                  ),
-                  PetdetailContainer(
-                    label: "Color",
-                    value: "Brunette",
-                  ),
-                ],
+                ),
               ),
             ),
-          ),
-          Container()
-        ],
+            Container()
+          ],
+        ),
       ),
-    ));
+    );
+  }
+}
+
+class CheckUpCard extends StatelessWidget {
+  final Function onTap;
+  final int data;
+  const CheckUpCard({
+    Key key,
+    this.onTap,
+    this.data,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        elevation: 2,
+        child: ListTile(
+          onTap: onTap,
+          leading: Icon(Icons.calendar_today),
+          title: Text(
+            "Last Checkup was 38 days ago",
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
+          subtitle: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Book an appointment",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline3
+                      .copyWith(fontSize: 14),
+                ),
+                Icon(
+                  Icons.arrow_forward_ios,
+                  size: 14,
+                  color: Colors.amber[400],
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class HealthCard extends StatelessWidget {
+  const HealthCard({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Container(
+          padding: const EdgeInsets.all(10.0),
+          height: 0.28.sh,
+          width: 1.sw,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(15.0),
+                child: Text(
+                  "Health",
+                  style: Theme.of(context).textTheme.headline3,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CirluarData(
+                    icon: MaterialCommunityIcons.water,
+                    value: 50,
+                  ),
+                  CirluarData(
+                    icon: MaterialCommunityIcons.heart_pulse,
+                    value: 82,
+                  ),
+                  CirluarData(
+                    icon: MaterialCommunityIcons.food_apple,
+                    value: 30,
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CirluarData extends StatelessWidget {
+  final IconData icon;
+  final double value;
+  const CirluarData({
+    Key key,
+    this.icon,
+    this.value,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SleekCircularSlider(
+      innerWidget: (val) => Icon(
+        icon,
+        size: 35,
+        color: Colors.amber[400],
+      ),
+      appearance: CircularSliderAppearance(
+          size: 100,
+          startAngle: 0,
+          angleRange: 360,
+          customWidths: CustomSliderWidths(
+              // handlerSize: 15,
+              progressBarWidth: 8,
+              trackWidth: 8),
+          customColors: CustomSliderColors(
+            progressBarColor: Colors.amber[300],
+            trackColor: Colors.amber[100],
+          )),
+      min: 10,
+      max: 100,
+      initialValue: value,
+    );
+  }
+}
+
+class DetialsCards extends StatelessWidget {
+  const DetialsCards({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.topLeft,
+      child: Container(
+        height: 0.12.sh,
+        padding: EdgeInsets.all(10),
+        child: ListView(
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          children: [
+            PetdetailContainer(
+              label: "Age",
+              value: "1 Year",
+            ),
+            PetdetailContainer(
+              label: "Sex",
+              value: "Male",
+            ),
+            PetdetailContainer(
+              label: "Breed",
+              value: "Golden Retriver",
+            ),
+            PetdetailContainer(
+              label: "Color",
+              value: "Brunette",
+            ),
+            PetdetailContainer(
+              label: "Color",
+              value: "Brunette",
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class BirthdayTile extends StatelessWidget {
+  const BirthdayTile({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 0.05.sw, vertical: 0.02.sh),
+      child: Container(
+        decoration: BoxDecoration(border: Border.all(color: Colors.amber[300])),
+        child: ListTile(
+          leading: Icon(Icons.cake),
+          title: Text(
+            "Birthday in 56 days",
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
+          trailing: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.notifications_off),
+          ),
+        ),
+      ),
+    );
   }
 }
 
