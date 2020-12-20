@@ -4,6 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:geoflutterfire/geoflutterfire.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sembast/sembast.dart';
 import 'package:path/path.dart' as path;
@@ -11,6 +13,12 @@ import '../models/user/user.dart';
 import 'database.dart';
 
 class AppRepository {
+
+  final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
+  GeoFirePoint _myLocation;
+  final geo = Geoflutterfire();
+  double latitude, longitude;
+
   /// Cloud Firestore instance
   final firestore = FirebaseFirestore.instance;
 
@@ -195,4 +203,29 @@ class AppRepository {
       return null;
     }
   }
+  Future<AppUser> adoptionForm(String uid) async{
+        _myLocation=_getCurrentLocation();
+
+     }
+
+
+
+  _getCurrentLocation() {
+
+    geolocator
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
+        .then((Position position) {
+      latitude = position.latitude;
+      longitude = position.longitude;
+      GeoFirePoint myLocation =
+      geo.point(latitude: latitude, longitude: longitude);
+      this._myLocation = myLocation;
+      return myLocation;
+
+    }).catchError((e) {
+      print(e);
+      return e;
+    });
+  }
+
 }

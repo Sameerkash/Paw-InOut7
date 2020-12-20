@@ -48,6 +48,8 @@ dependencies:
   sembast: ^2.4.8
   flutter_swipable: ^0.1.1
   flutter_tindercard: ^0.2.0
+  geoflutterfire: ^2.1.0
+  geolocator: ^5.3.1
 
 dependency_override:
   flutter_svg: ^0.19.2+1
