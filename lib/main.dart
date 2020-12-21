@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:petme/ui/forum/forum_detail.dart';
 import 'package:petme/ui/lost/scanner.dart';
 import 'package:petme/ui/mate/matelist.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Paw',
-      home: Container(),
+      //home: Container(),
       theme: ThemeData(
           primarySwatch: Colors.amber,
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -35,8 +36,8 @@ class MyApp extends StatelessWidget {
             bodyText2:
                 GoogleFonts.openSans(color: Colors.grey[600], fontSize: 18),
           )),
-      //home: Lost(),
-      builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
+      home:ForumDetailPage() ,
+      //builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
     );
   }
 }
