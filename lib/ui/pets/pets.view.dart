@@ -1,6 +1,9 @@
+import 'package:animations/animations.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:petme/ui/pets/add.pet.view.dart';
+import 'package:petme/ui/pets/pets.detail.view.dart';
 
 import '../../widgets/card.dart';
 
@@ -31,20 +34,45 @@ class PetsView extends StatelessWidget {
                 ),
               ),
             ),
-            ListTileButton(
-              label: 'Add Pet',
-              icon: Icons.add,
-              onPressed: () {},
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: OpenContainer(
+                closedShape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                transitionDuration: const Duration(milliseconds: 400),
+                closedBuilder: (context, action) {
+                  return ListTileButton(
+                    label: 'Add Pet',
+                    icon: Icons.add,
+                    // onPressed: () {},
+                  );
+                },
+                openBuilder: (context, action) {
+                  return AddPetView();
+                },
+              ),
+            ),
+            OpenContainer(
+              closedShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              transitionDuration: const Duration(milliseconds: 400),
+              closedBuilder: (context, action) {
+                return PetCard(
+                  // onTap: ,
+                  name: "Maxiee",
+                  caption: "Fun little pup always filled with energy",
+                  age: '9 months',
+                  imageURL: 'assets/images/i1.jpg',
+                );
+              },
+              openBuilder: (context, action) {
+                return PetsDetailView();
+              },
             ),
             PetCard(
-              onTap: () {},
-              name: "Maxiee",
-              caption: "Fun little pup always filled with energy",
-              age: '9 months',
-              imageURL: 'assets/images/i1.jpg',
-            ),
-            PetCard(
-              onTap: () {},
+              // onTap: () {},
               name: "Benji",
               caption: "Playful and Joyful",
               age: '2 years',
