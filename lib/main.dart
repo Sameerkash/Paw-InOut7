@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //home: Mateview(),
-      //builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
+      // home: Mateview(),
+      builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
     );
   }
 }
