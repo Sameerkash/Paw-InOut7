@@ -77,7 +77,7 @@ class _AdoptionItemState extends State<AdoptionItem> {
                         children: <Widget>[
                           CircleAvatar(
                             radius: 22.0,
-                            backgroundImage: AssetImage('assets/images/me.jpg'),
+                            // backgroundImage: AssetImage('assets/images/me.jpg'),
                           ),
                           SizedBox(
                             width: 10.0,
@@ -199,7 +199,7 @@ class _AdoptionItemState extends State<AdoptionItem> {
               elevation: 6.0,
               child: Container(
                 padding: EdgeInsets.symmetric(
-                  vertical: 20.0,
+                  vertical: 10.0,
                   horizontal: 20.0,
                 ),
                 child: Column(

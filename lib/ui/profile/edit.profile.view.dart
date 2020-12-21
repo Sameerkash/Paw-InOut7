@@ -188,39 +188,3 @@ class _EditProfileViewState extends State<EditProfileView> {
     );
   }
 }
-
-class CustomTextFormField extends StatelessWidget {
-  final String label;
-  final Function(String) validate;
-  final Function(String) onSave;
-  final bool readOnly;
-  final String initialValue;
-  final int maxLines;
-  const CustomTextFormField({
-    Key key,
-    this.label,
-    this.validate,
-    this.onSave,
-    this.readOnly = false,
-    this.initialValue,
-    this.maxLines = 1,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 0.012.sh),
-      child: Container(
-        margin: EdgeInsets.only(top: 0, left: 10, right: 10),
-        child: TextFormField(
-          maxLines: maxLines,
-          initialValue: initialValue,
-          onSaved: onSave,
-          validator: validate,
-          readOnly: readOnly,
-          decoration: inputFormat2(context, label: label),
-        ),
-      ),
-    );
-  }
-}

@@ -34,10 +34,11 @@ class MyApp extends StatelessWidget {
             bodyText1:
                 GoogleFonts.openSans(color: Colors.grey[600], fontSize: 22),
             bodyText2:
-                GoogleFonts.openSans(color: Colors.grey[600], fontSize: 18),
+                GoogleFonts.openSans(color: Colors.grey[600], fontSize: 17),
           )),
-      //home:ForumDetailPage() ,
-      builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
+      //home: Lost(),
+     builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
+
     );
   }
 }
