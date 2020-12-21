@@ -54,6 +54,13 @@ dependencies:
   sembast: ^2.4.8
   sleek_circular_slider: ^1.2.0+web
   url_launcher: ^5.7.10
+  carousel_slider: ^2.3.1
+  swipebuttonflutter: ^0.1.2
+
+
+#dependency_overrides:
+   #flutter_svg: ^0.19.2+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

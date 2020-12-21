@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:auto_size_text/auto_size_text.dart';
+
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:petme/ui/store/store.view.dart';
+
 import 'dashboard.view.dart';
 
 class GridDashboard extends StatelessWidget {
-  Items item1 = new Items(
-      title: "Store", img: "assets/icons/cart.png", screen: DashBoard());
+  Items item1 =
+      new Items(title: "Store", img: "assets/icons/cart.png", screen: Store());
 
   Items item2 = new Items(
       title: "Lost", img: "assets/icons/lost.png", screen: DashBoard());
