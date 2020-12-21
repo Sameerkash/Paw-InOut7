@@ -10,17 +10,23 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../ui/adoption/adoption.item.dart';
+import '../ui/adoption/adoptionlist.view.dart';
 import '../ui/app.view.dart';
 import '../ui/auth/auth.view.dart';
+import '../ui/messaging/message.detail.view.dart';
 
 class Routes {
   static const String appView = '/';
   static const String signUpView = '/sign-up-view';
   static const String adoptionItem = '/adoption-item';
+  static const String adoptionList = '/adoption-list';
+  static const String messageDetailView = '/message-detail-view';
   static const all = <String>{
     appView,
     signUpView,
     adoptionItem,
+    adoptionList,
+    messageDetailView,
   };
 }
 
@@ -31,6 +37,8 @@ class Router extends RouterBase {
     RouteDef(Routes.appView, page: AppView),
     RouteDef(Routes.signUpView, page: SignUpView),
     RouteDef(Routes.adoptionItem, page: AdoptionItem),
+    RouteDef(Routes.adoptionList, page: AdoptionList),
+    RouteDef(Routes.messageDetailView, page: MessageDetailView),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -53,6 +61,18 @@ class Router extends RouterBase {
         settings: data,
       );
     },
+    AdoptionList: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => AdoptionList(),
+        settings: data,
+      );
+    },
+    MessageDetailView: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => MessageDetailView(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -66,4 +86,9 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushSignUpView() => push<dynamic>(Routes.signUpView);
 
   Future<dynamic> pushAdoptionItem() => push<dynamic>(Routes.adoptionItem);
+
+  Future<dynamic> pushAdoptionList() => push<dynamic>(Routes.adoptionList);
+
+  Future<dynamic> pushMessageDetailView() =>
+      push<dynamic>(Routes.messageDetailView);
 }

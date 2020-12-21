@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:petme/ui/adoption/adoption_HomePage.dart';
+import 'package:petme/ui/adoption/adoption.home.view.dart';
+import 'package:petme/ui/messaging/message.view.dart';
 
 import 'package:petme/ui/pets/pets.view.dart';
 import 'adoption/adoptionlist.view.dart';
@@ -15,7 +16,7 @@ class NavBarView extends StatelessWidget {
     DashBoard(),
     PetsView(),
 
-    AdoptionHomePage(),
+    MessageView(),
     Mateview(),
 
     // Container(),

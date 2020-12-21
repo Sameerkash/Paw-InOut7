@@ -25,6 +25,7 @@ dependencies:
   animations: ^1.1.2
   auto_route: ^0.6.9
   auto_size_text: ^2.1.0
+  bubble: ^1.1.9+1
   cached_network_image: ^2.4.1
   carousel_slider: ^2.3.1
   cloud_firestore: ^0.14.4
@@ -53,13 +54,12 @@ dependencies:
   qr_code_scanner: ^0.1.0
   sembast: ^2.4.8
   sleek_circular_slider: ^1.2.0+web
-  url_launcher: ^5.7.10
   swipebuttonflutter: ^0.1.2
+  url_launcher: ^5.7.10
   material_design_icons_flutter: ^4.0.5755
 
 
-#dependency_overrides:
-   #flutter_svg: ^0.19.2+1
+
 
 dev_dependencies:
   flutter_test:
