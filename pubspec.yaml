@@ -56,6 +56,7 @@ dependencies:
   url_launcher: ^5.7.10
   carousel_slider: ^2.3.1
   swipebuttonflutter: ^0.1.2
+  material_design_icons_flutter: ^4.0.5755
 
 
 #dependency_overrides:
