@@ -52,7 +52,7 @@ class _StoreState extends State<Store> {
   }
 
   List<String> ImgUrl = [
-    "https://images-na.ssl-images-amazon.com/images/I/41iSjX7evDL._AC_.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH695dovCW4n2qXYgUdsV_37NmUMQ-vrrTbg&usqp=CAU",
     "https://images-na.ssl-images-amazon.com/images/I/71Nt3c7NRRL._SL1200_.jpg",
     "https://images-na.ssl-images-amazon.com/images/I/91P9esToEBL._AC_SX679_.jpg",
     "https://images-na.ssl-images-amazon.com/images/I/813syZZ6wwL._AC_SX679_.jpg",
@@ -128,7 +128,7 @@ class _StoreState extends State<Store> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    Items("Seat Armour", "Pet Supplies", ImgUrl[0], "1600"),
+                    Items("PAW QR collar", "Pet Supplies", ImgUrl[0], "1600"),
                     Items("Biumpro Rub", "Care", ImgUrl[1], "220"),
                     Items("Pork Chops", "Pet Food", ImgUrl[2], "799"),
                     Items("Burt Bees lotion", "Care", ImgUrl[3], "300"),

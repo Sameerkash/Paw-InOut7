@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:petme/ui/forum/forum_detail.dart';
 import 'package:petme/ui/lost/scanner.dart';
 import 'package:petme/ui/mate/matelist.dart';
+import 'package:petme/ui/vet/doctor.dart';
 
 import 'router/router.gr.dart' as r;
 
@@ -37,8 +38,7 @@ class MyApp extends StatelessWidget {
                 GoogleFonts.openSans(color: Colors.grey[600], fontSize: 17),
           )),
       //home: Lost(),
-     builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
-
+      builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
     );
   }
 }

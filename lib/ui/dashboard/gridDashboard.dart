@@ -5,7 +5,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:petme/ui/adoption/adoption_HomePage.dart';
+import 'package:petme/ui/forum/forum_detail.dart';
+import 'package:petme/ui/lost/scanner.dart';
+import 'package:petme/ui/mate/matelist.dart';
 import 'package:petme/ui/store/store.view.dart';
+import 'package:petme/ui/vet/doctor.dart';
 
 import 'dashboard.view.dart';
 
@@ -13,23 +18,23 @@ class GridDashboard extends StatelessWidget {
   Items item1 =
       new Items(title: "Store", img: "assets/icons/cart.png", screen: Store());
 
-  Items item2 = new Items(
-      title: "Lost", img: "assets/icons/lost.png", screen: DashBoard());
+  Items item2 =
+      new Items(title: "Lost", img: "assets/icons/lost.png", screen: Lost());
 
   Items item3 = new Items(
-      title: "Forum", img: "assets/icons/chat(1).png", screen: DashBoard());
+      title: "Adopt",
+      img: "assets/icons/adopt.png",
+      screen: AdoptionHomePage());
 
   Items item4 = new Items(
-      title: "Vets", img: "assets/icons/vet.png", screen: DashBoard());
+      title: "Vets", img: "assets/icons/vet.png", screen: DoctorView());
   Items item5 = new Items(
-      title: "Mate", img: "assets/icons/heart.png", screen: DashBoard());
+      title: "Mate", img: "assets/icons/heart.png", screen: Mateview());
 
   Items item6 = new Items(
-      title: "More", img: "assets/icons/cart.png", screen: DashBoard());
-  Items item7 = new Items(
-      title: "Forum", img: "assets/icons/chat(1).png", screen: DashBoard());
-  Items item8 = new Items(
-      title: "Forum", img: "assets/icons/chat(1).png", screen: DashBoard());
+      title: "Forum",
+      img: "assets/icons/chat(1).png",
+      screen: ForumDetailPage());
 
   @override
   Widget build(BuildContext context) {
@@ -40,15 +45,13 @@ class GridDashboard extends StatelessWidget {
       item4,
       item5,
       item6,
-      item7,
-      item8,
     ];
     //var color = 0xffd6b3dd;
     return Flexible(
       child: GridView.count(
           childAspectRatio: 1.0,
           padding: EdgeInsets.only(left: 14, right: 14, top: 10),
-          crossAxisCount: 4,
+          crossAxisCount: 3,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           children: myList.map((data) {

@@ -17,7 +17,7 @@ class Slides extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0),
                 image: DecorationImage(
                   image: NetworkImage(
-                      'https://i.pinimg.com/originals/7b/f9/0b/7bf90b49f75aa5f50ca1e72974b91eff.png'),
+                      'https://assets.telegraphindia.com/telegraph/98b0be28-7e4f-427c-b582-a3324d2f448b.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -27,10 +27,10 @@ class Slides extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CircleAvatar(
-                      radius: 100,
+                      radius: 30,
                       backgroundColor: Color(0xff90b7e2),
                       child: CircleAvatar(
-                        radius: 95,
+                        radius: 25,
                         backgroundImage: NetworkImage(
                             'https://thumbs.gfycat.com/BelovedSarcasticGallowaycow-size_restricted.gif'),
                       ),
@@ -49,7 +49,7 @@ class Slides extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0),
                 image: DecorationImage(
                   image: NetworkImage(
-                      'https://www.pxwall.com/wp-content/uploads/2018/06/Wallpaper%20polygon,%20yellow,%204k,%20Abstract%209457119186.jpg'),
+                      'https://www.vrcmalvern.com/wp-content/uploads/2019/02/pet-diet.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -58,9 +58,9 @@ class Slides extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'PAW Store for awesome pets',
+                    'What\'s your pet\'s diet?',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
                     ),
@@ -68,9 +68,9 @@ class Slides extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(
-                      '40% discount on all products in PAW store',
+                      'Choose nutritious food products',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 15.0,
                       ),
                       textAlign: TextAlign.center,
@@ -103,7 +103,7 @@ class Slides extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0),
                 image: DecorationImage(
                   image: NetworkImage(
-                      'https://cdn.dribbble.com/users/369304/screenshots/1628617/triangles.png'),
+                      'https://barkingroyalty.com/wp-content/uploads/2017/01/how-to-train-dog-to-sit.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -111,23 +111,20 @@ class Slides extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Image(
-                    image: NetworkImage(
-                        'https://thumbs.gfycat.com/AdorableReasonableAmericanpainthorse-max-1mb.gif'),
-                    height: 150,
-                    width: 150,
-                  ),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(
-                      '10 signs to that help you identify if your pet is not doing well ',
+                      'Here\'s how you can train Train your pet. Start early',
                       style: GoogleFonts.abel(
                           textStyle: TextStyle(
-                              color: Colors.deepPurple,
+                              color: Colors.white,
                               fontSize: 19,
                               fontWeight: FontWeight.w800)),
                       textAlign: TextAlign.center,
                     ),
+                  ),
+                  SizedBox(
+                    height: 90,
                   ),
                 ],
               ),

@@ -56,6 +56,10 @@ dependencies:
   sleek_circular_slider: ^1.2.0+web
   swipebuttonflutter: ^0.1.2
   url_launcher: ^5.7.10
+  material_design_icons_flutter: ^4.0.5755
+
+
+
 
 dev_dependencies:
   flutter_test:
