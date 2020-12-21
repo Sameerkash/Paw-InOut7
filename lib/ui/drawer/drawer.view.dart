@@ -27,10 +27,10 @@ class DrawerView extends StatefulWidget {
 
 class _DrawerViewState extends State<DrawerView> {
   static List<MenuItem> mainMenu = [
-    MenuItem(("Profile"), MaterialCommunityIcons.face_profile, 0),
-    MenuItem(("Dashboard"), MaterialCommunityIcons.view_dashboard, 1),
-    MenuItem(("My Pets"), FontAwesome.paw, 2),
-    MenuItem(("Messages"), MaterialCommunityIcons.message, 3),
+    MenuItem(("Dashboard"), MaterialCommunityIcons.view_dashboard, 0),
+    MenuItem(("My Pets"), FontAwesome.paw, 1),
+    MenuItem(("Messages"), MaterialCommunityIcons.message, 2),
+    MenuItem(("Profile"), MaterialCommunityIcons.face_profile, 3),
     MenuItem(("Settings"), Ionicons.ios_settings, 4),
   ];
 
@@ -160,7 +160,8 @@ class _MenuScreenState extends State<MenuScreen> {
               //   ),
               // ),
               Padding(
-                padding: EdgeInsets.only(bottom: 0.08.sh, left: 24, right: 24.0),
+                padding:
+                    EdgeInsets.only(bottom: 0.08.sh, left: 24, right: 24.0),
                 child: Text(
                   ("Paw"),
                   style: GoogleFonts.openSans(

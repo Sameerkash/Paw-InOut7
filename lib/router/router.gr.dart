@@ -8,12 +8,20 @@
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
+import '../ui/adoption/adoption.home.view.dart';
 import '../ui/adoption/adoption.item.dart';
 import '../ui/adoption/adoptionlist.view.dart';
 import '../ui/app.view.dart';
 import '../ui/auth/auth.view.dart';
+import '../ui/forum/forum_detail.dart';
+import '../ui/lost/lost.view.dart';
+import '../ui/lost/scanner.dart';
+import '../ui/mate/matelist.dart';
 import '../ui/messaging/message.detail.view.dart';
+import '../ui/store/store.view.dart';
+import '../ui/vet/doctor.dart';
 
 class Routes {
   static const String appView = '/';
@@ -21,12 +29,26 @@ class Routes {
   static const String adoptionItem = '/adoption-item';
   static const String adoptionList = '/adoption-list';
   static const String messageDetailView = '/message-detail-view';
+  static const String lostView = '/lost-view';
+  static const String store = '/Store';
+  static const String doctorView = '/doctor-view';
+  static const String adoptionHome = '/adoption-home';
+  static const String mateview = '/Mateview';
+  static const String forumDetailPage = '/forum-detail-page';
+  static const String lost = '/Lost';
   static const all = <String>{
     appView,
     signUpView,
     adoptionItem,
     adoptionList,
     messageDetailView,
+    lostView,
+    store,
+    doctorView,
+    adoptionHome,
+    mateview,
+    forumDetailPage,
+    lost,
   };
 }
 
@@ -39,6 +61,13 @@ class Router extends RouterBase {
     RouteDef(Routes.adoptionItem, page: AdoptionItem),
     RouteDef(Routes.adoptionList, page: AdoptionList),
     RouteDef(Routes.messageDetailView, page: MessageDetailView),
+    RouteDef(Routes.lostView, page: LostView),
+    RouteDef(Routes.store, page: Store),
+    RouteDef(Routes.doctorView, page: DoctorView),
+    RouteDef(Routes.adoptionHome, page: AdoptionHome),
+    RouteDef(Routes.mateview, page: Mateview),
+    RouteDef(Routes.forumDetailPage, page: ForumDetailPage),
+    RouteDef(Routes.lost, page: Lost),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -73,6 +102,51 @@ class Router extends RouterBase {
         settings: data,
       );
     },
+    LostView: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => LostView(),
+        settings: data,
+      );
+    },
+    Store: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => Store(),
+        settings: data,
+      );
+    },
+    DoctorView: (data) {
+      final args = data.getArgs<DoctorViewArguments>(
+        orElse: () => DoctorViewArguments(),
+      );
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => DoctorView(key: args.key),
+        settings: data,
+      );
+    },
+    AdoptionHome: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => AdoptionHome(),
+        settings: data,
+      );
+    },
+    Mateview: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => Mateview(),
+        settings: data,
+      );
+    },
+    ForumDetailPage: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => ForumDetailPage(),
+        settings: data,
+      );
+    },
+    Lost: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => Lost(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -91,4 +165,35 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushMessageDetailView() =>
       push<dynamic>(Routes.messageDetailView);
+
+  Future<dynamic> pushLostView() => push<dynamic>(Routes.lostView);
+
+  Future<dynamic> pushStore() => push<dynamic>(Routes.store);
+
+  Future<dynamic> pushDoctorView({
+    Key key,
+  }) =>
+      push<dynamic>(
+        Routes.doctorView,
+        arguments: DoctorViewArguments(key: key),
+      );
+
+  Future<dynamic> pushAdoptionHome() => push<dynamic>(Routes.adoptionHome);
+
+  Future<dynamic> pushMateview() => push<dynamic>(Routes.mateview);
+
+  Future<dynamic> pushForumDetailPage() =>
+      push<dynamic>(Routes.forumDetailPage);
+
+  Future<dynamic> pushLost() => push<dynamic>(Routes.lost);
+}
+
+/// ************************************************************************
+/// Arguments holder classes
+/// *************************************************************************
+
+/// DoctorView arguments holder class
+class DoctorViewArguments {
+  final Key key;
+  DoctorViewArguments({this.key});
 }
