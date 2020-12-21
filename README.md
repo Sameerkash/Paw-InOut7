@@ -47,24 +47,24 @@ PAW aims to solve:
 
 **Task List**
 
-| sl no. | Task                                    | Assignee | Progress    |
-| ------ | --------------------------------------- | -------- | ----------- |
-| 1      | Set up firebase                         | Akhil    | Yes         |
-| 2      | Database Design                         | Sameer   | Yes         |
-| 3      | UI Design                               | Vanshika | In-Progress |
-| 4      | DashBoard                               | Akanksha | In-Progress |
-| 5      | find a Mate                             | Akhil    | InProgress  |
-| 6      | Adopt don't shop                        | Vamsi    | In-Progress |
-| 7      | Discussions                             |          | No          |
-| 8      | Store                                   | Akanksha | In-Progress |
-| 9      | Lost and found                          | Akanksha | In-Progress |
-| 10     | Authentication with firebase            | Sameer   | Yes         |
-| 11     | Vet and Consultation                    |          | No          |
-| 12     | For Hire                                |          | No          |
-| 13     | Train your pets, Health tips and tricks |          | No          |
-| 14     | Auth View                               | Sameer   | Yes         |
-| 15     | Drawer, Profile View                    | Sameer   | In-Progress |
-| 16     | My Pets                                 | Sameer   | In-Progress |
+| sl no. | Task                                    | Assignee | Progress |
+| ------ | --------------------------------------- | -------- | -------- |
+| 1      | Set up firebase                         | Akhil    | Yes      |
+| 2      | Database Design                         | Sameer   | Yes      |
+| 3      | UI Design                               | Vanshika | Yes      |
+| 4      | DashBoard                               | Akanksha | Yes      |
+| 5      | find a Mate                             | Akhil    | Yes      |
+| 6      | Adopt don't shop                        | Vamsi    | Yes      |
+| 7      | Discussions                             | Vamsi    | Yes      |
+| 8      | Store                                   | Akanksha | Yes      |
+| 9      | Lost and found                          | Akanksha | Yes      |
+| 10     | Authentication with firebase            | Sameer   | Yes      |
+| 11     | Vet and Consultation                    | Akhil    | Yes      |
+| 12     | For Hire                                | Akhil    | Yes      |
+| 13     | Train your pets, Health tips and tricks | Akanksha | Yes      |
+| 14     | Auth View                               | Sameer   | Yes      |
+| 15     | Drawer, Profile View                    | Sameer   | Yes      |
+| 16     | My Pets                                 | Sameer   | Yes      |
 
 <!-- DATABASE SCHEMA -->
 

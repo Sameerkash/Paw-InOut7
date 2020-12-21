@@ -31,7 +31,7 @@ class GridDashboard extends StatelessWidget {
 
       title: "Forum",
       img: "assets/icons/chat(1).png",
-      screen: '/forum-detail-page');
+      screen: '/forum-page');
 
 
   @override

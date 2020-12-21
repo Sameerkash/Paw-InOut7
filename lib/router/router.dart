@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route_annotations.dart';
+import 'package:petme/ui/forum/forum.dart';
 import 'package:petme/ui/forum/forum_detail.dart';
 import 'package:petme/ui/lost/scanner.dart';
 
@@ -24,7 +25,7 @@ import '../ui/vet/doctor.dart';
   CupertinoRoute(page: DoctorView),
   CupertinoRoute(page: AdoptionHome),
   CupertinoRoute(page: Mateview),
-  CupertinoRoute(page: ForumDetailPage),
+  CupertinoRoute(page: ForumPage),
   CupertinoRoute(page: Lost),
 
 

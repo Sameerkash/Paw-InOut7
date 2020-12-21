@@ -15,7 +15,7 @@ import '../ui/adoption/adoption.item.dart';
 import '../ui/adoption/adoptionlist.view.dart';
 import '../ui/app.view.dart';
 import '../ui/auth/auth.view.dart';
-import '../ui/forum/forum_detail.dart';
+import '../ui/forum/forum.dart';
 import '../ui/lost/lost.view.dart';
 import '../ui/lost/scanner.dart';
 import '../ui/mate/matelist.dart';
@@ -34,7 +34,7 @@ class Routes {
   static const String doctorView = '/doctor-view';
   static const String adoptionHome = '/adoption-home';
   static const String mateview = '/Mateview';
-  static const String forumDetailPage = '/forum-detail-page';
+  static const String forumPage = '/forum-page';
   static const String lost = '/Lost';
   static const all = <String>{
     appView,
@@ -47,7 +47,7 @@ class Routes {
     doctorView,
     adoptionHome,
     mateview,
-    forumDetailPage,
+    forumPage,
     lost,
   };
 }
@@ -66,7 +66,7 @@ class Router extends RouterBase {
     RouteDef(Routes.doctorView, page: DoctorView),
     RouteDef(Routes.adoptionHome, page: AdoptionHome),
     RouteDef(Routes.mateview, page: Mateview),
-    RouteDef(Routes.forumDetailPage, page: ForumDetailPage),
+    RouteDef(Routes.forumPage, page: ForumPage),
     RouteDef(Routes.lost, page: Lost),
   ];
   @override
@@ -135,9 +135,9 @@ class Router extends RouterBase {
         settings: data,
       );
     },
-    ForumDetailPage: (data) {
+    ForumPage: (data) {
       return CupertinoPageRoute<dynamic>(
-        builder: (context) => ForumDetailPage(),
+        builder: (context) => ForumPage(),
         settings: data,
       );
     },
@@ -182,8 +182,7 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushMateview() => push<dynamic>(Routes.mateview);
 
-  Future<dynamic> pushForumDetailPage() =>
-      push<dynamic>(Routes.forumDetailPage);
+  Future<dynamic> pushForumPage() => push<dynamic>(Routes.forumPage);
 
   Future<dynamic> pushLost() => push<dynamic>(Routes.lost);
 }

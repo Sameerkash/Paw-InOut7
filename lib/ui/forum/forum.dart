@@ -102,7 +102,7 @@ class _ForumPageState extends State<ForumPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: const Color(0xffffdcc9),
+      backgroundColor:  Colors.amber[200],
       appBar: new AppBar(
         centerTitle: false,
         elevation: 0.0,
