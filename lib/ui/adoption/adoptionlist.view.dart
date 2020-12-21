@@ -1,9 +1,10 @@
+import 'package:animations/animations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:petme/ui/adoption/adoption_form.dart';
+import 'package:petme/ui/adoption/adoption.form..dart';
 
 class AdoptionList extends StatefulWidget {
   @override
@@ -254,7 +255,7 @@ class _AdoptionListState extends State<AdoptionList> {
                   ),
                   CircleAvatar(
                     radius: 20.0,
-                    backgroundImage: AssetImage('assets/images/me.jpg'),
+                    // backgroundImage: AssetImage('assets/images/me.jpg'),
                   ),
                 ],
               ),
@@ -493,11 +494,17 @@ class _AdoptionListState extends State<AdoptionList> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => AdoptionForm()));
+      floatingActionButton: OpenContainer(
+        closedShape: CircleBorder(),
+        transitionDuration: const Duration(milliseconds: 400),
+        closedBuilder: (context, action) {
+          return FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: action,
+          );
+        },
+        openBuilder: (context, action) {
+          return AdoptionForm();
         },
       ),
     );
