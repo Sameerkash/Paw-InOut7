@@ -7,8 +7,8 @@
 - [About the Project](#about-the-project)
 - [Problem Statement](#Problem-Statement)
 - [Features](#features)
-- [Getting Started](#getting-started)
 - [Database Schema](#Database-Schema)
+- [Team](#team)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -40,31 +40,6 @@ PAW aims to solve:
 - Find a vet nearby or book an online consultation session
 - Online store for food & other grooming products
 - Forum to discuss about your pets needs- category tags.
-
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-**Task List**
-
-| sl no. | Task                                    | Assignee | Progress |
-| ------ | --------------------------------------- | -------- | -------- |
-| 1      | Set up firebase                         | Akhil    | Yes      |
-| 2      | Database Design                         | Sameer   | Yes      |
-| 3      | UI Design                               | Vanshika | Yes      |
-| 4      | DashBoard                               | Akanksha | Yes      |
-| 5      | find a Mate                             | Akhil    | Yes      |
-| 6      | Adopt don't shop                        | Vamsi    | Yes      |
-| 7      | Discussions                             | Vamsi    | Yes      |
-| 8      | Store                                   | Akanksha | Yes      |
-| 9      | Lost and found                          | Akanksha | Yes      |
-| 10     | Authentication with firebase            | Sameer   | Yes      |
-| 11     | Vet and Consultation                    | Akhil    | Yes      |
-| 12     | For Hire                                | Akhil    | Yes      |
-| 13     | Train your pets, Health tips and tricks | Akanksha | Yes      |
-| 14     | Auth View                               | Sameer   | Yes      |
-| 15     | Drawer, Profile View                    | Sameer   | Yes      |
-| 16     | My Pets                                 | Sameer   | Yes      |
 
 <!-- DATABASE SCHEMA -->
 
@@ -98,6 +73,38 @@ PAW aims to solve:
 
 ```
 lib
+│   ├── models
+│   │   ├── common
+│   │   ├── forum
+│   │   ├── pet
+│   │   ├── store
+│   │   └── user
+│   ├── providers
+│   ├── router
+│   ├── services
+│   ├── ui
+│   │   ├── adoption
+│   │   ├── auth
+│   │   ├── dashboard
+│   │   ├── drawer
+│   │   ├── forum
+│   │   ├── home
+│   │   ├── lost
+│   │   ├── mate
+│   │   ├── messaging
+│   │   ├── pets
+│   │   ├── profile
+│   │   ├── settings
+│   │   ├── store
+│   │   └── vet
+│   ├── utils
+│   └── widgets
+└── test
+
+2747 directories
+sameerkashyap@Sameers-MacBook-Pro petme % cd lib
+sameerkashyap@Sameers-MacBook-Pro lib % tree -d 
+.
 ├── models
 │   ├── common
 │   ├── forum
@@ -112,13 +119,42 @@ lib
 │   ├── auth
 │   ├── dashboard
 │   ├── drawer
+│   ├── forum
 │   ├── home
+│   ├── lost
 │   ├── mate
+│   ├── messaging
 │   ├── pets
-│   └── profile
+│   ├── profile
+│   ├── settings
+│   ├── store
+│   └── vet
 ├── utils
 └── widgets
 ```
+
+<!-- GETTING STARTED -->
+
+**Task List**
+
+| sl no. | Task                                    | Assignee | Progress |
+| ------ | --------------------------------------- | -------- | -------- |
+| 1      | Set up firebase                         | Akhil    | Yes      |
+| 2      | Database Design                         | Sameer   | Yes      |
+| 3      | UI Design                               | Vanshika | Yes      |
+| 4      | DashBoard                               | Akanksha | Yes      |
+| 5      | find a Mate                             | Akhil    | Yes      |
+| 6      | Adopt don't shop                        | Vamsi    | Yes      |
+| 7      | Discussions                             | Vamsi    | Yes      |
+| 8      | Store                                   | Akanksha | Yes      |
+| 9      | Lost and found                          | Akanksha | Yes      |
+| 10     | Authentication with firebase            | Sameer   | Yes      |
+| 11     | Vet and Consultation                    | Akhil    | Yes      |
+| 12     | For Hire                                | Akhil    | Yes      |
+| 13     | Train your pets, Health tips and tricks | Akanksha | Yes      |
+| 14     | Auth View                               | Sameer   | Yes      |
+| 15     | Drawer, Profile View                    | Sameer   | Yes      |
+| 16     | My Pets                                 | Sameer   | Yes      |
 
 ## Team:
 
