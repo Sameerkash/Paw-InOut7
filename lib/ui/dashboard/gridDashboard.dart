@@ -23,7 +23,7 @@ class GridDashboard extends StatelessWidget {
 
   Items item3 = new Items(
       title: "Adopt",
-      img: "assets/icons/house.png",
+      img: "assets/icons/adopt.png",
       screen: AdoptionHomePage());
 
   Items item4 = new Items(
