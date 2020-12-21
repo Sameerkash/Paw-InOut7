@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:petme/ui/forum/forum.dart';
 
 import '../adoption/adoption.home.view.dart';
 import '../forum/forum_detail.dart';
@@ -24,9 +25,7 @@ class GridDashboard extends StatelessWidget {
       title: "Mate", img: "assets/icons/heart.png", screen: Mateview());
 
   Items item6 = new Items(
-      title: "Forum",
-      img: "assets/icons/chat(1).png",
-      screen: ForumDetailPage());
+      title: "Forum", img: "assets/icons/chat(1).png", screen: ForumPage());
 
   @override
   Widget build(BuildContext context) {
