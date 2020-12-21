@@ -26,16 +26,16 @@ dependencies:
   auto_route: ^0.6.9
   auto_size_text: ^2.1.0
   cached_network_image: ^2.4.1
+  carousel_slider: ^2.3.1
   cloud_firestore: ^0.14.4
   cupertino_icons: ^1.0.0
   dartz: ^0.9.2
-  # drawerbehavior: ^1.1.4
+  direct_select_flutter: ^1.0.7
   firebase_auth: ^0.18.4+1
   firebase_core: ^0.5.3
   firebase_storage: ^5.2.0
   flutter_hooks: ^0.15.0
   flutter_screenutil: ^3.2.0
-  # flutter_svg: ^0.17.4
   flutter_swipable: ^0.1.1
   flutter_tindercard: ^0.2.0
   flutter_vector_icons: ^0.2.1
@@ -43,23 +43,23 @@ dependencies:
   font_awesome_flutter: ^8.10.1
   freezed_annotation: ^0.12.0
   geoflutterfire: ^2.2.1
+  geolocator: ^5.3.1
   google_fonts: ^1.1.1
   google_sign_in: ^4.5.6
   hooks_riverpod: ^0.12.1
   image_picker: ^0.6.7+15
   json_annotation: ^3.1.1
   path_provider: ^1.6.24
+  qr_code_scanner: ^0.1.0
   sembast: ^2.4.8
   sleek_circular_slider: ^1.2.0+web
-  geolocator: ^5.3.1
-  qr_code_scanner: ^0.1.0
   url_launcher: ^5.7.10
-  carousel_slider: ^2.3.1
   swipebuttonflutter: ^0.1.2
 
 
 #dependency_overrides:
    #flutter_svg: ^0.19.2+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
