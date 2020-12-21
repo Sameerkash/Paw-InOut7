@@ -23,13 +23,6 @@ class MyApp extends StatelessWidget {
       title: 'Paw',
       home: Container(),
       theme: ThemeData(
-<<<<<<< HEAD
-        primarySwatch: Colors.amber,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      // home: Mateview(),
-      builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
-=======
           primarySwatch: Colors.amber,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           textTheme: TextTheme(
@@ -44,7 +37,6 @@ class MyApp extends StatelessWidget {
           )),
       //home: Lost(),
      builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
->>>>>>> 191fb78f4d57d9bfac39c33617358f79c98a0c9e
     );
   }
 }
