@@ -111,9 +111,6 @@ class Slides extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  SizedBox(
-                    height: 90,
-                  ),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(
@@ -125,6 +122,9 @@ class Slides extends StatelessWidget {
                               fontWeight: FontWeight.w800)),
                       textAlign: TextAlign.center,
                     ),
+                  ),
+                  SizedBox(
+                    height: 90,
                   ),
                 ],
               ),

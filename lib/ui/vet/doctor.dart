@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class doctorview extends StatefulWidget {
-  doctorview({Key key}) : super(key: key);
+class DoctorView extends StatefulWidget {
+  DoctorView({Key key}) : super(key: key);
 
   @override
-  _doctorviewState createState() => _doctorviewState();
+  _DoctorViewState createState() => _DoctorViewState();
 }
 
-class _doctorviewState extends State<doctorview> {
+class _DoctorViewState extends State<DoctorView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,12 +43,12 @@ class _doctorviewState extends State<doctorview> {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  // child: Image.asset(
-                                  //   'assets/images/person1.jpg',
-                                  //   height: 40,
-                                  // )
-                                ),
+                                borderRadius: BorderRadius.circular(10),
+                                // child: Image.asset(
+                                //   'assets/images/person1.jpg',
+                                //   height: 40,
+                                // )
+                              ),
                             ),
                           ],
                         ),
@@ -217,21 +217,21 @@ class _doctorviewState extends State<doctorview> {
                     alignment: Alignment.topLeft,
                     child: RichText(
                         text: TextSpan(children: <TextSpan>[
-                          TextSpan(
-                              text: "Top ",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                color: Colors.black,
-                              )),
-                          TextSpan(
-                              text: "Rated Doctor ",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w300,
-                                fontSize: 20,
-                                color: Colors.black,
-                              )),
-                        ])),
+                      TextSpan(
+                          text: "Top ",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.black,
+                          )),
+                      TextSpan(
+                          text: "Rated Doctor ",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 20,
+                            color: Colors.black,
+                          )),
+                    ])),
                   ),
                   Text("See All",
                       style: TextStyle(
