@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
                 GoogleFonts.openSans(color: Colors.grey[600], fontSize: 18),
           )),
       //home: Lost(),
-     builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
+      builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
     );
   }
 }

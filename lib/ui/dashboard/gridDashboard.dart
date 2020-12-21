@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:auto_size_text/auto_size_text.dart';
+
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'dashboard.view.dart';
 
 class GridDashboard extends StatelessWidget {
