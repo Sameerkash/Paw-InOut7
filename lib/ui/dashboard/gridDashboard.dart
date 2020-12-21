@@ -25,10 +25,6 @@ class GridDashboard extends StatelessWidget {
       title: "Mate", img: "assets/icons/heart.png", screen: DashBoard());
 
   Items item6 = new Items(
-      title: "More", img: "assets/icons/cart.png", screen: DashBoard());
-  Items item7 = new Items(
-      title: "Forum", img: "assets/icons/chat(1).png", screen: DashBoard());
-  Items item8 = new Items(
       title: "Forum", img: "assets/icons/chat(1).png", screen: DashBoard());
 
   @override
@@ -40,15 +36,13 @@ class GridDashboard extends StatelessWidget {
       item4,
       item5,
       item6,
-      item7,
-      item8,
     ];
     //var color = 0xffd6b3dd;
     return Flexible(
       child: GridView.count(
           childAspectRatio: 1.0,
           padding: EdgeInsets.only(left: 14, right: 14, top: 10),
-          crossAxisCount: 4,
+          crossAxisCount: 3,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           children: myList.map((data) {
