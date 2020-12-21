@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:petme/ui/forum/forum_detail.dart';
 import 'package:petme/ui/lost/scanner.dart';
 import 'package:petme/ui/mate/matelist.dart';
+import 'package:petme/ui/vet/doctor.dart';
 
 import 'router/router.gr.dart' as r;
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Paw',
-      home: Container(),
+     // home: Container(),
       theme: ThemeData(
           primarySwatch: Colors.amber,
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -36,8 +37,8 @@ class MyApp extends StatelessWidget {
             bodyText2:
                 GoogleFonts.openSans(color: Colors.grey[600], fontSize: 18),
           )),
-      //home:ForumDetailPage() ,
-      builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
+      home: doctorview() ,
+      //builder: ExtendedNavigator.builder<r.Router>(router: r.Router()),
     );
   }
 }
