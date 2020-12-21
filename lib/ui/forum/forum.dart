@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:petme/ui/forum/forum_detail.dart';
+
+import 'forum_detail.dart';
 
 class ForumPage extends StatefulWidget {
   final String title = "Forum";

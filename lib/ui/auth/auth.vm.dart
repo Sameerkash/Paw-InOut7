@@ -2,10 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../providers/app.provider.dart';
-import '../../services/repository.dart';
 
 import '../../models/user/user.dart';
+import '../../providers/app.provider.dart';
+import '../../services/repository.dart';
 
 part 'auth.vm.freezed.dart';
 

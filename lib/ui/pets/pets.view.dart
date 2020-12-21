@@ -2,10 +2,10 @@ import 'package:animations/animations.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:petme/ui/pets/add.pet.view.dart';
-import 'package:petme/ui/pets/pets.detail.view.dart';
 
 import '../../widgets/card.dart';
+import 'add.pet.view.dart';
+import 'pets.detail.view.dart';
 
 class PetsView extends StatelessWidget {
   @override

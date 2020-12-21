@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:petme/services/repository.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 
 class Lost extends StatefulWidget {

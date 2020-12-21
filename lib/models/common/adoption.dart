@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:petme/models/pet/pet.dart';
+
+import '../pet/pet.dart';
+
 part 'adoption.freezed.dart';
 part 'adoption.g.dart';
 

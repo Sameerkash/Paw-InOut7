@@ -2,9 +2,11 @@ import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/all.dart';
-import 'package:petme/models/user/user.dart';
-import 'package:petme/providers/app.provider.dart';
-import 'package:petme/services/repository.dart';
+
+import '../../models/user/user.dart';
+import '../../providers/app.provider.dart';
+import '../../services/repository.dart';
+
 part 'profile.vm.freezed.dart';
 
 @freezed

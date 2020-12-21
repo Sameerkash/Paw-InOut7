@@ -5,7 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:petme/widgets/textField.dart';
+
+import '../../widgets/textField.dart';
 
 List<IconData> animalIcons = [
   FontAwesomeIcons.cat,

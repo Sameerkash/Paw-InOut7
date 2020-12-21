@@ -7,7 +7,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:petme/models/common/adoption.dart';
+import '../models/common/adoption.dart';
 import 'package:sembast/sembast.dart';
 import 'package:path/path.dart' as path;
 import '../models/user/user.dart';

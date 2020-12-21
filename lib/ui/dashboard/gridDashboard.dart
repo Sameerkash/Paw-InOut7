@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:auto_size_text/auto_size_text.dart';
-
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:petme/ui/adoption/adoption_HomePage.dart';
-import 'package:petme/ui/forum/forum_detail.dart';
-import 'package:petme/ui/lost/scanner.dart';
-import 'package:petme/ui/mate/matelist.dart';
-import 'package:petme/ui/store/store.view.dart';
-import 'package:petme/ui/vet/doctor.dart';
-
-import 'dashboard.view.dart';
+import '../adoption/adoption.home.view.dart';
+import '../forum/forum_detail.dart';
+import '../lost/scanner.dart';
+import '../mate/matelist.dart';
+import '../store/store.view.dart';
+import '../vet/doctor.dart';
 
 class GridDashboard extends StatelessWidget {
   Items item1 =
@@ -22,9 +16,7 @@ class GridDashboard extends StatelessWidget {
       new Items(title: "Lost", img: "assets/icons/lost.png", screen: Lost());
 
   Items item3 = new Items(
-      title: "Adopt",
-      img: "assets/icons/adopt.png",
-      screen: AdoptionHomePage());
+      title: "Adopt", img: "assets/icons/adopt.png", screen: AdoptionHome());
 
   Items item4 = new Items(
       title: "Vets", img: "assets/icons/vet.png", screen: DoctorView());

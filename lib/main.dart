@@ -3,10 +3,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:petme/ui/forum/forum_detail.dart';
-import 'package:petme/ui/lost/scanner.dart';
-import 'package:petme/ui/mate/matelist.dart';
-import 'package:petme/ui/vet/doctor.dart';
+import 'ui/forum/forum_detail.dart';
+import 'ui/lost/scanner.dart';
+import 'ui/mate/matelist.dart';
+import 'ui/vet/doctor.dart';
 
 import 'router/router.gr.dart' as r;
 

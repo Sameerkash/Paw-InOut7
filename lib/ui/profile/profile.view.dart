@@ -8,10 +8,10 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:petme/models/user/user.dart';
-import 'package:petme/ui/profile/edit.profile.view.dart';
-import 'package:petme/ui/profile/profile.vm.dart';
-import 'package:petme/widgets/image.dart';
+import '../../models/user/user.dart';
+import '../../widgets/image.dart';
+import 'edit.profile.view.dart';
+import 'profile.vm.dart';
 
 final profileProvider = StateNotifierProvider<ProfileVM>((ref) {
   return ProfileVM(ref);

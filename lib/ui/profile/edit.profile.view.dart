@@ -1,17 +1,17 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'package:petme/models/user/user.dart';
-import 'package:petme/ui/profile/profile.view.dart';
-import 'package:petme/utils/image.dart';
-import 'package:petme/widgets/dialog.dart';
-import 'package:petme/widgets/textField.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:auto_route/auto_route.dart';
+
+import '../../models/user/user.dart';
+import '../../utils/image.dart';
+import '../../widgets/dialog.dart';
+import '../../widgets/textField.dart';
+import 'profile.view.dart';
 
 class EditProfileView extends StatefulHookWidget {
   final AppUser profile;

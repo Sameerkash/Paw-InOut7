@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../ui/auth/auth.vm.dart';
 
 import '../services/repository.dart';
+import '../ui/auth/auth.vm.dart';
 
 final appRepositoryProvider = Provider<AppRepository>((ref) => AppRepository());
 
