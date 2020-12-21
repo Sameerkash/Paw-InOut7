@@ -8,6 +8,8 @@ import '../ui/auth/auth.view.dart';
   CupertinoRoute(page: AppView, initial: true),
   CupertinoRoute(page: SignUpView),
   CupertinoRoute(page: AdoptionItem),
+  
+
 
 ], generateNavigationHelperExtension: true)
 class $Router {}

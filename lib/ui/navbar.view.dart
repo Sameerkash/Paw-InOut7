@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petme/ui/lost/scanner.dart';
 import 'package:petme/ui/pets/pets.view.dart';
 import 'adoption/adoptionlist.view.dart';
 import 'dashboard/dashboard.view.dart';
@@ -12,7 +13,7 @@ class NavBarView extends StatelessWidget {
     DashBoard(),
     PetsView(),
     AdoptionList(),
-    Mateview(),
+    Lost(),
     // Container(),
   ];
 
