@@ -65,7 +65,7 @@ class _StoreState extends State<Store> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[200],
+      backgroundColor: Colors.amber[300],
       appBar: AppBar(
         leading: Icon(Icons.arrow_back_ios, color: Colors.grey),
         elevation: 0,

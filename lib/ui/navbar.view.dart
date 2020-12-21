@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petme/ui/settings/settings.view.dart';
 
 import 'dashboard/dashboard.view.dart';
 import 'drawer/drawer.view.dart';
@@ -9,12 +10,11 @@ import 'profile/profile.view.dart';
 
 class NavBarView extends StatelessWidget {
   final List<Widget> views = [
-    ProfileView(),
     DashBoard(),
     PetsView(),
-
     MessageView(),
-    Mateview(),
+    ProfileView(),
+    SettingsView(),
 
     // Container(),
   ];
