@@ -54,6 +54,7 @@ dependencies:
   geolocator: ^5.3.1
   qr_code_scanner: ^0.1.0
   url_launcher: ^5.7.10
+  swipebuttonflutter: ^0.1.2
 
 #dependency_overrides:
    #flutter_svg: ^0.19.2+1
