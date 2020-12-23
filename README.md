@@ -32,6 +32,11 @@ There are a lot of stray animals that can be put up for adoption but there's no 
 <img src="./screenshots/s1.jpg" alt="1" width="300" height="600" /> <img src="./screenshots/s2.jpg" alt="1" width="300" height="600" /> <img src="./screenshots/s3.jpg" alt="1" width="300" height="600" /> <img src="./screenshots/s4.jpg" alt="1" width="300" height="600" /> <img src="./screenshots/s5.jpg" alt="1"
 	 width="300" height="600" /> <img src="./screenshots/s6.jpg" alt="1"
 	 width="300" height="600" /><img src="./screenshots/s7.jpg" alt="1"
+	 width="300" height="600" /> <img src="./screenshots/s8.jpg" alt="1"
+	 width="300" height="600" /><img src="./screenshots/s9.jpg" alt="1"
+	 width="300" height="600" /><img src="./screenshots/s10.jpg" alt="1"
+	 width="300" height="600" /><img src="./screenshots/s11.jpg" alt="1"
+	 width="300" height="600" /><img src="./screenshots/s12.jpg" alt="1"
 	 width="300" height="600" />
 
 </pre>
