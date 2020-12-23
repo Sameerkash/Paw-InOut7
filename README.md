@@ -115,37 +115,6 @@ lib
 │   ├── utils
 │   └── widgets
 └── test
-
-2747 directories
-sameerkashyap@Sameers-MacBook-Pro petme % cd lib
-sameerkashyap@Sameers-MacBook-Pro lib % tree -d
-.
-├── models
-│   ├── common
-│   ├── forum
-│   ├── pet
-│   ├── store
-│   └── user
-├── providers
-├── router
-├── services
-├── ui
-│   ├── adoption
-│   ├── auth
-│   ├── dashboard
-│   ├── drawer
-│   ├── forum
-│   ├── home
-│   ├── lost
-│   ├── mate
-│   ├── messaging
-│   ├── pets
-│   ├── profile
-│   ├── settings
-│   ├── store
-│   └── vet
-├── utils
-└── widgets
 ```
 
 <!-- GETTING STARTED -->
