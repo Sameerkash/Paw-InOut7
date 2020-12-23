@@ -26,6 +26,16 @@ There are a lot of stray animals that can be put up for adoption but there's no 
 
 <!-- FEATURES -->
 
+## Screenshots
+
+<pre>
+<img src="./screenshots/s1.jpg" alt="1" width="300" height="600" /> <img src="./screenshots/s2.jpg" alt="1" width="300" height="600" /> <img src="./screenshots/s3.jpg" alt="1" width="300" height="600" /> <img src="./screenshots/s4.jpg" alt="1" width="300" height="600" /> <img src="./screenshots/s5.jpg" alt="1"
+	 width="300" height="600" /> <img src="./screenshots/s6.jpg" alt="1"
+	 width="300" height="600" /><img src="./screenshots/s7.jpg" alt="1"
+	 width="300" height="600" />
+
+</pre>
+
 ## Features
 
 PAW aims to solve:
@@ -103,7 +113,7 @@ lib
 
 2747 directories
 sameerkashyap@Sameers-MacBook-Pro petme % cd lib
-sameerkashyap@Sameers-MacBook-Pro lib % tree -d 
+sameerkashyap@Sameers-MacBook-Pro lib % tree -d
 .
 ├── models
 │   ├── common
