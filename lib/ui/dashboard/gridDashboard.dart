@@ -1,16 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'package:petme/ui/lost/lost.view.dart';
-
-
-import '../adoption/adoption.home.view.dart';
-import '../forum/forum_detail.dart';
-import '../lost/scanner.dart';
-import '../mate/matelist.dart';
-import '../store/store.view.dart';
-import '../vet/doctor.dart';
-import 'package:auto_route/auto_route.dart';
 
 class GridDashboard extends StatelessWidget {
   Items item1 =

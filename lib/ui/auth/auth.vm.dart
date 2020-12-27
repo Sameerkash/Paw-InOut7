@@ -16,6 +16,7 @@ abstract class AuthState with _$AuthState {
   const factory AuthState.unAuthenticated() = _UnAuthenticated;
 }
 
+/// ViewModel for [AuthView]
 class AuthVM extends StateNotifier<AuthState> {
   AppRepository repo;
 

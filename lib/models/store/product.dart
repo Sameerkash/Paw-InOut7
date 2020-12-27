@@ -4,6 +4,9 @@ part 'product.freezed.dart';
 part 'product.g.dart';
 
 @freezed
+
+/// [Product] data class
+
 abstract class Product with _$Product {
   const factory Product({
     String name,
@@ -19,6 +22,9 @@ abstract class Product with _$Product {
 }
 
 @freezed
+
+/// [PoductCategory] data class
+
 abstract class ProductCategory with _$ProductCategory {
   const factory ProductCategory({
     String productCategoryId,

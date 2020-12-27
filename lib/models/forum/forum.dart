@@ -7,7 +7,9 @@ part 'forum.freezed.dart';
 part 'forum.g.dart';
 
 @freezed
-  
+
+/// [Post] data class
+
 abstract class Post with _$Post {
   const factory Post({
     String userId,
@@ -15,7 +17,7 @@ abstract class Post with _$Post {
     String postId,
     String title,
     String body,
-  @TimestampConvertDatetime() DateTime timestamp,
+    @TimestampConvertDatetime() DateTime timestamp,
     String imaga,
     List<String> tags,
     PetCategory petCategory,
@@ -28,7 +30,9 @@ abstract class Post with _$Post {
 }
 
 @freezed
- 
+
+/// [Comment] data class
+
 abstract class Comment with _$Comment {
   const factory Comment({
     String postId,

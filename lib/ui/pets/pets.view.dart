@@ -7,6 +7,7 @@ import '../../widgets/card.dart';
 import 'add.pet.view.dart';
 import 'pets.detail.view.dart';
 
+/// [Petsview] for user pets
 class PetsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

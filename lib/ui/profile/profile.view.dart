@@ -17,6 +17,7 @@ final profileProvider = StateNotifierProvider<ProfileVM>((ref) {
   return ProfileVM(ref);
 });
 
+/// [ProfileView] for user Profile
 class ProfileView extends HookWidget {
   final List<Widget> pageList = <Widget>[
     ProfileScrollView(),

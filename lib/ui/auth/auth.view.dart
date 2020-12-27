@@ -11,6 +11,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../providers/app.provider.dart';
 import '../../widgets/textField.dart';
 
+/// [AuthView] to present the signIn and SignUp Views
 class AuthView extends HookWidget {
   @override
   Widget build(BuildContext context) {

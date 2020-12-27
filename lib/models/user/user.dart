@@ -4,6 +4,9 @@ part 'user.freezed.dart';
 part 'user.g.dart';
 
 @freezed
+
+/// [AppUser] data class
+
 abstract class AppUser with _$AppUser {
   const factory AppUser({
     String userId,

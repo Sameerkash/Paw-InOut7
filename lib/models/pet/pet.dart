@@ -4,6 +4,8 @@ part 'pet.freezed.dart';
 part 'pet.g.dart';
 
 @freezed
+
+/// [Pet] data class
 abstract class Pet with _$Pet {
   const factory Pet({
     String petId,
@@ -23,6 +25,9 @@ abstract class Pet with _$Pet {
 }
 
 @freezed
+
+/// [PetCategory] data class
+
 abstract class PetCategory with _$PetCategory {
   const factory PetCategory({
     String petCategoryId,
@@ -36,6 +41,9 @@ abstract class PetCategory with _$PetCategory {
 }
 
 @freezed
+
+/// [PetBreed] data class
+
 abstract class PetBreed with _$PetBreed {
   const factory PetBreed({
     String breedId,

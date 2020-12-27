@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:petme/providers/app.provider.dart';
+
+import '../../providers/app.provider.dart';
 
 class SettingsView extends StatelessWidget {
   @override

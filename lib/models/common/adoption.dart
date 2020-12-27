@@ -6,6 +6,9 @@ part 'adoption.freezed.dart';
 part 'adoption.g.dart';
 
 @freezed
+
+/// [Adoption]  Data transer obejct
+
 abstract class Adoption with _$Adoption {
   const factory Adoption({
     Pet pet,

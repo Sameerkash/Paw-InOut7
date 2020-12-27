@@ -7,9 +7,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import '../models/common/adoption.dart';
-import 'package:sembast/sembast.dart';
 import 'package:path/path.dart' as path;
+import 'package:sembast/sembast.dart';
+
+import '../models/common/adoption.dart';
 import '../models/user/user.dart';
 import 'database.dart';
 
@@ -157,6 +158,7 @@ class AppRepository {
     await auth.signOut();
   }
 
+  /// Get user profile from local database
   Future<AppUser> getUserProfile() async {
     final user = getLoggedInUser();
     return user;
@@ -208,6 +210,8 @@ class AppRepository {
   Future<void> adoptionForm(String uid, Adoption adoptionForm) async {
     //to get user current location
     // GeoFirePoint _myLocation = await _getCurrentLocation();
+
+    /// TODO: Finish adoption form with geolocation
   }
 
   /// Get adoption list from nearby locations.
@@ -236,10 +240,11 @@ class AppRepository {
       yield availableAdoptions;
     } catch (e) {
       print(e);
-      yield null; //TODO: Replace with either
+      yield null; //TODO: Replace with Either
     }
   }
 
+  /// Get the current Location of [AppUser]
   Future<GeoFirePoint> _getCurrentLocation() async {
     try {
       double latitude, longitude;
@@ -257,11 +262,13 @@ class AppRepository {
       return null;
     }
   }
-   getuserdetails(var uid ) async {
-     final result = await firestore.collection('users').doc(uid).get();
-     return result;
+
+  getuserdetails(var uid) async {
+    final result = await firestore.collection('users').doc(uid).get();
+    return result;
   }
-  getpetdetails(var uid ) async {
+
+  getpetdetails(var uid) async {
     final result = await firestore.collection('petCategory').doc(uid).get();
     return result;
   }

@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swipable/flutter_swipable.dart';
 import 'package:flutter_tindercard/flutter_tindercard.dart';
-import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Mateview extends StatefulWidget {
   @override
